@@ -1,0 +1,6 @@
+@APICyberAuditoria_HostAddress = http://localhost:5187
+
+GET {{APICyberAuditoria_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

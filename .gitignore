@@ -1,4 +1,2 @@
 .vs/
-./dashboard-auditoria/node_modules/
-.dashboard-auditoria/dist/
 /dashboard-auditoria/node_modules
