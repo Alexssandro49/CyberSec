@@ -1,13 +1,15 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using APICyberAuditoria.Models;
+using Microsoft.AspNetCore.Authorization;
 
 [Route("api/[controller]")]
 [ApiController]
-public class RepostasController : ControllerBase
+[AllowAnonymous]
+public class RespostasController : ControllerBase
 {
     private readonly DBAuditoria _context;
-    public RepostasController(DBAuditoria context)
+    public RespostasController(DBAuditoria context)
     {
         _context = context;
     }

@@ -1,9 +1,11 @@
+using APICyberAuditoria.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using APICyberAuditoria.Models;
 
 [Route("api/[controller]")]
 [ApiController]
+[AllowAnonymous]
 public class EmpresasController : ControllerBase
 {
     private readonly DBAuditoria _context;

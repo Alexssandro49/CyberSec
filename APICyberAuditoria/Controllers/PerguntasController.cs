@@ -1,9 +1,11 @@
+using APICyberAuditoria.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using APICyberAuditoria.Models;
 
 [Route("api/[controller]")]
 [ApiController]
+[AllowAnonymous]
 public class PerguntasController : ControllerBase
 {
     private readonly DBAuditoria _context;
@@ -14,9 +16,32 @@ public class PerguntasController : ControllerBase
 
     // GET: api/Pergunta
     [HttpGet]
+    [AllowAnonymous]
     public async Task<ActionResult<IEnumerable<Pergunta>>> GetPergunta()
     {
         return await _context.Perguntas.ToListAsync();
+    }
+    [AllowAnonymous]
+    [HttpGet("Modulo/{idModolu}")]
+    public async Task<ActionResult<IEnumerable<Pergunta>>> GetPerguntaByAuditoria(int idModolu)
+    {
+        var perguntas = await _context.Perguntas.Where(p => p.Controle.ModuloId == idModolu).Include(p => p.Controle).ToListAsync();
+        if (perguntas == null || perguntas.Count == 0)
+        {
+            return NotFound();
+        }
+        var perguntasDto = perguntas.Select(p => new
+        {
+            id = p.Id,
+            descricao = p.Descricao,
+            controle = new
+            {
+                nome = "Controles",
+                controle= p.Controle.Nome ?? "Sem controle"
+            }
+        });
+
+        return Ok(perguntasDto);
     }
 
     // GET: api/Pergunta/5

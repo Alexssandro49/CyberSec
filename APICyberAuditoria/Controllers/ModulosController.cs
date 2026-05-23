@@ -1,9 +1,11 @@
+using APICyberAuditoria.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using APICyberAuditoria.Models;
 
 [Route("api/[controller]")]
 [ApiController]
+[AllowAnonymous]
 public class ModulosController : ControllerBase
 {
     private readonly DBAuditoria _context;
@@ -31,6 +33,24 @@ public class ModulosController : ControllerBase
         }
 
         return modulo;
+    }
+
+    [HttpGet("Empresa/{id}")]
+    public async Task<ActionResult<Modulo>> GetEmpresaModulo(int id)
+    {
+        var modulosVinculados = await _context.Repostas
+        .Where(r => r.Auditoria.EmpresaId == id)
+        .Select(r => r.Pergunta.Controle.Modulo)
+        .Distinct() // Evita duplicar o mesmo módulo na lista
+        .ToListAsync();
+
+        if (modulosVinculados == null || !modulosVinculados.Any())
+        {
+            // Se a empresa for nova e não tiver auditorias, você pode retornar vazio ou um NotFound
+            return Ok(new List<Modulo>());
+        }
+
+        return Ok(modulosVinculados);
     }
 
     // PUT: api/Modulo/5

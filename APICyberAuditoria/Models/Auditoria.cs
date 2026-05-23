@@ -11,6 +11,6 @@ namespace APICyberAuditoria.Models
         public virtual Usuario? Usuario { get; set; }
         public int EmpresaId { get; set; }
         public virtual Empresa? Empresa { get; set; }
-        public virtual ICollection<Pergunta>? Perguntas { get; set; } ;
+        public virtual ICollection<Reposta>? Respostas { get; set; }
     }
 }

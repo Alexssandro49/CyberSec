@@ -4,11 +4,12 @@ namespace APICyberAuditoria.Models
 {
     public class DBAuditoria : DbContext
     {
-        public DbSet<APICyberAuditoria.Models.Empresa> Empresa { get; set; } = default!;
-        public DbSet<APICyberAuditoria.Models.Usuario> Usuario { get; set; } = default!;
+        
         public DBAuditoria(DbContextOptions<DBAuditoria> options) : base(options)
         {
         }
+        public DbSet<Empresa> Empresa { get; set; }
+        public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Modulo> Modulos { get; set; }
         public DbSet<Controle> Controles { get; set; }
         public DbSet<Pergunta> Perguntas { get; set; }

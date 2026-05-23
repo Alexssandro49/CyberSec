@@ -1,8 +1,10 @@
+using APICyberAuditoria.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using APICyberAuditoria.Models;
 
 [Route("api/[controller]")]
+[AllowAnonymous]
 [ApiController]
 public class AuditoriasController : ControllerBase
 {
@@ -27,13 +29,58 @@ public class AuditoriasController : ControllerBase
             .ToListAsync();
         var resultados = auditoriasRecentes.Select(a => new
         {
-            Id=a.Id,
-            Data = a.Data,
-            Empresa = a.Empresa.Name ?? "Empresa não especificada",
-            Modulo= _context.Auditorias.Where(s => s.Id == a.Id).SelectMany(s => s.Perguntas).Select(s => s.Controle.Modulo.Nome).FirstOrDefault() ?? "Módulo não especificado",
-            Score =""
+            id=a.Id,
+            empresa = a.Empresa.Nome ?? "Empresa não especificada",
+            norma= _context.Auditorias.Where(s => s.Id == a.Id).SelectMany(s => s.Respostas).Select(s => s.Pergunta.Controle.Modulo.Nome).FirstOrDefault() ?? "Módulo não especificado",
+            data = a.Data,
+            score =""
             
         });
+
+        return Ok(resultados);
+    }
+    [HttpGet("Empresa/{idEmpresa}/Modulo/{idModulo}")]
+    public async Task<ActionResult> GetAuditoriasRecentes(int idEmpresa, int idModulo)
+    {
+        // 1. Fazemos TODOS os Includes necessários em uma única viagem ao banco de dados!
+        var auditorias = await _context.Auditorias
+            .Include(a => a.Respostas)
+                .ThenInclude(r => r.Pergunta)
+                    .ThenInclude(p => p.Controle)
+                        .ThenInclude(c => c.Modulo)
+            .Where(a => a.EmpresaId == idEmpresa && a.Respostas.Any(r => r.Pergunta.Controle.ModuloId == idModulo))
+            .OrderByDescending(a => a.Data)
+            .ToListAsync();
+
+        // 2. Mapeamento e Cálculo do Score na memória (muito mais rápido)
+        var resultados = auditorias.Select(a =>
+        {
+            // Pega apenas as respostas desta auditoria referentes ao módulo filtrado
+            var respostasDoModulo = a.Respostas.Where(r => r.Pergunta.Controle.ModuloId == idModulo).ToList();
+
+            // Conta quantos SIM e NÃO existem
+            double totalSim = respostasDoModulo.Count(r => r.Resposta == TipoReposta.Sim);
+            double totalNao = respostasDoModulo.Count(r => r.Resposta == TipoReposta.Não);
+
+            double totalValidas = totalSim + totalNao;
+
+            // Calcula a porcentagem. Se não houver nenhuma resposta válida (só N/A), a nota é 0.
+            int scoreCalculado = totalValidas > 0
+                                 ? (int)Math.Round((totalSim / totalValidas) * 100)
+                                 : 0;
+
+            // Descobre o nome do módulo com base na primeira pergunta
+            string nomeModulo = respostasDoModulo.FirstOrDefault()?.Pergunta?.Controle?.Modulo?.Nome ?? "Módulo não especificado";
+
+            return new
+            {
+                id = a.Id,
+                modulo = nomeModulo, // Corrigido a grafia de 'modulu' para 'modulo'
+                data = a.Data.ToString("dd/MM/yyyy"),
+                score = scoreCalculado
+            };
+        });
+
         return Ok(resultados);
     }
 
@@ -87,6 +134,7 @@ public class AuditoriasController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<Auditoria>> PostAuditoria(Auditoria auditoria)
     {
+        auditoria.Data = DateTime.UtcNow;
         _context.Auditorias.Add(auditoria);
         await _context.SaveChangesAsync();
 

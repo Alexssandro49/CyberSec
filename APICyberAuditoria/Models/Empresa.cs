@@ -7,7 +7,7 @@ namespace APICyberAuditoria.Models
         [Key]
         public int Id { get; set; }
         [Required]
-        public string? Name { get; set; }
+        public string? Nome { get; set; }
         [Required]
         public string? CNPJ { get; set; }
         public ICollection<Auditoria>? Auditorias { get; set; }

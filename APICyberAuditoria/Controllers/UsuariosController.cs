@@ -100,7 +100,7 @@ public class UsuariosController : ControllerBase
         var usuarioView = new
         {
             Id = usuario.Id,
-            Nome = usuario.Name,
+            Nome = usuario.Nome,
             Email = usuario.Email
         };
         return Ok(usuarioView);

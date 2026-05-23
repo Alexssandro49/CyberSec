@@ -98,6 +98,58 @@
         }
       }
     },
+    "/api/Auditorias/Recentes": {
+      "get": {
+        "tags": [
+          "Auditorias"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Auditorias/Empresa/{idEmpresa}/Modulo/{idModulo}": {
+      "get": {
+        "tags": [
+          "Auditorias"
+        ],
+        "parameters": [
+          {
+            "name": "idEmpresa",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "pattern": "^-?(?:0|[1-9]\\d*)$",
+              "type": [
+                "integer",
+                "string"
+              ],
+              "format": "int32"
+            }
+          },
+          {
+            "name": "idModulo",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "pattern": "^-?(?:0|[1-9]\\d*)$",
+              "type": [
+                "integer",
+                "string"
+              ],
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Auditorias/{id}": {
       "get": {
         "tags": [
@@ -407,6 +459,50 @@
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Controles/Auditoria/{id}": {
+      "get": {
+        "tags": [
+          "Controles"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "pattern": "^-?(?:0|[1-9]\\d*)$",
+              "type": [
+                "integer",
+                "string"
+              ],
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Controle"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Controle"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Controle"
+                }
+              }
+            }
           }
         }
       }
@@ -809,6 +905,50 @@
         }
       }
     },
+    "/api/Modulos/Empresa/{id}": {
+      "get": {
+        "tags": [
+          "Modulos"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "pattern": "^-?(?:0|[1-9]\\d*)$",
+              "type": [
+                "integer",
+                "string"
+              ],
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Modulo"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Modulo"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Modulo"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Perguntas": {
       "get": {
         "tags": [
@@ -887,6 +1027,59 @@
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Pergunta"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Perguntas/Modulo/{idModolu}": {
+      "get": {
+        "tags": [
+          "Perguntas"
+        ],
+        "parameters": [
+          {
+            "name": "idModolu",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "pattern": "^-?(?:0|[1-9]\\d*)$",
+              "type": [
+                "integer",
+                "string"
+              ],
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Pergunta"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Pergunta"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Pergunta"
+                  }
                 }
               }
             }
@@ -1008,10 +1201,10 @@
         }
       }
     },
-    "/api/Repostas": {
+    "/api/Respostas": {
       "get": {
         "tags": [
-          "Repostas"
+          "Respostas"
         ],
         "responses": {
           "200": {
@@ -1047,7 +1240,7 @@
       },
       "post": {
         "tags": [
-          "Repostas"
+          "Respostas"
         ],
         "requestBody": {
           "content": {
@@ -1093,10 +1286,10 @@
         }
       }
     },
-    "/api/Repostas/{id}": {
+    "/api/Respostas/{id}": {
       "get": {
         "tags": [
-          "Repostas"
+          "Respostas"
         ],
         "parameters": [
           {
@@ -1138,7 +1331,7 @@
       },
       "put": {
         "tags": [
-          "Repostas"
+          "Respostas"
         ],
         "parameters": [
           {
@@ -1183,7 +1376,7 @@
       },
       "delete": {
         "tags": [
-          "Repostas"
+          "Respostas"
         ],
         "parameters": [
           {
@@ -1508,6 +1701,15 @@
                 "$ref": "#/components/schemas/Empresa"
               }
             ]
+          },
+          "respostas": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/Reposta"
+            }
           }
         }
       },
@@ -1562,7 +1764,7 @@
       },
       "Empresa": {
         "required": [
-          "name",
+          "nome",
           "cnpj"
         ],
         "type": "object",
@@ -1575,7 +1777,7 @@
             ],
             "format": "int32"
           },
-          "name": {
+          "nome": {
             "type": [
               "null",
               "string"
@@ -1678,6 +1880,12 @@
               }
             ]
           },
+          "nome": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
           "descricao": {
             "type": [
               "null",
@@ -1752,7 +1960,7 @@
       },
       "Usuario": {
         "required": [
-          "name",
+          "nome",
           "email",
           "senha"
         ],
@@ -1766,7 +1974,7 @@
             ],
             "format": "int32"
           },
-          "name": {
+          "nome": {
             "type": [
               "null",
               "string"
@@ -1814,7 +2022,7 @@
       "name": "Perguntas"
     },
     {
-      "name": "Repostas"
+      "name": "Respostas"
     },
     {
       "name": "Usuarios"

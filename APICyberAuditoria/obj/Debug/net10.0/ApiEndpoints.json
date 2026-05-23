@@ -109,6 +109,37 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "AuditoriasController",
+    "Method": "GetAuditoriasRecentes",
+    "RelativePath": "api/Auditorias/Empresa/{idEmpresa}/Modulo/{idModulo}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idEmpresa",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "idModulo",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuditoriasController",
+    "Method": "GetAuditoriasRecentes",
+    "RelativePath": "api/Auditorias/Recentes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ControlesController",
     "Method": "GetControle",
     "RelativePath": "api/Controles",
@@ -216,6 +247,32 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ControlesController",
+    "Method": "GetControleAuditoria",
+    "RelativePath": "api/Controles/Auditoria/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "APICyberAuditoria.Models.Controle",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "EmpresasController",
@@ -436,6 +493,32 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "ModulosController",
+    "Method": "GetEmpresaModulo",
+    "RelativePath": "api/Modulos/Empresa/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "APICyberAuditoria.Models.Modulo",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "PerguntasController",
     "Method": "GetPergunta",
     "RelativePath": "api/Perguntas",
@@ -545,9 +628,35 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "RepostasController",
+    "ContainingType": "PerguntasController",
+    "Method": "GetPerguntaByAuditoria",
+    "RelativePath": "api/Perguntas/Modulo/{idModolu}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idModolu",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[APICyberAuditoria.Models.Pergunta, APICyberAuditoria, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "RespostasController",
     "Method": "GetReposta",
-    "RelativePath": "api/Repostas",
+    "RelativePath": "api/Respostas",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -565,9 +674,9 @@
     ]
   },
   {
-    "ContainingType": "RepostasController",
+    "ContainingType": "RespostasController",
     "Method": "PostReposta",
-    "RelativePath": "api/Repostas",
+    "RelativePath": "api/Respostas",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -591,9 +700,9 @@
     ]
   },
   {
-    "ContainingType": "RepostasController",
+    "ContainingType": "RespostasController",
     "Method": "GetReposta",
-    "RelativePath": "api/Repostas/{id}",
+    "RelativePath": "api/Respostas/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -617,9 +726,9 @@
     ]
   },
   {
-    "ContainingType": "RepostasController",
+    "ContainingType": "RespostasController",
     "Method": "PutReposta",
-    "RelativePath": "api/Repostas/{id}",
+    "RelativePath": "api/Respostas/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -638,9 +747,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "RepostasController",
+    "ContainingType": "RespostasController",
     "Method": "DeleteReposta",
-    "RelativePath": "api/Repostas/{id}",
+    "RelativePath": "api/Respostas/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
