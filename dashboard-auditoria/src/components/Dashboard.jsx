@@ -1,9 +1,13 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useOutletContext, useNavigate } from 'react-router-dom';
 
 export default function Dashboard() {
   // Puxa o contexto global que configuramos no Layout
   const { empresaSelecionada, setEmpresaSelecionada } = useOutletContext();
+  const [auditorias, setAuditorias] = useState([]);
+  const [dadosAud, setDadosAud] = useState([]);
+  const [modulos, setModulos] = useState([]);
+  const [carregando, setCarregando] = useState(true);
   const navigate = useNavigate();
 
   // Estados dos Modais
@@ -11,15 +15,65 @@ export default function Dashboard() {
   const [erro, setErro] = useState('');
   
   // Estado para o formulário de Nova Sessão
-  const [formData, setFormData] = useState({ name: '', cnpj: '', moduloId: null });
+  const [formData, setFormData] = useState({ nome: '', cnpj: '', moduloId: null });
   const [carregandoSessao, setCarregandoSessao] = useState(false);
 
-  // Dados fictícios para os KPIs da tela
-  const ultimasAuditorias = [
-    { id: 1, empresa: 'TechCorp Solutions', norma: 'ISO 27001', data: '22/05/2026', status: 'Concluído', score: '92%' },
-    { id: 2, empresa: 'FinHealth S.A.', norma: 'ISO 27701', data: '20/05/2026', status: 'Em Andamento', score: '--' },
-  ];
 
+  useEffect(() => {
+      const buscarAuditorias = async () => {
+        try {
+          const resposta = await fetch('http://localhost:5187/api/Auditorias/Recentes');
+          if (resposta.ok) {
+            setAuditorias(await resposta.json());
+          }
+        } catch (error) {
+          // Fallback local
+          setAuditorias([
+            { id: 1, empresa: 'Security Tech S/A', cnpj: '12.345.678/0001-90', setor: 'Tecnologia', status: 'Ativa' }
+          ]);
+        } finally {
+          setCarregando(false);
+        }
+      };
+      buscarAuditorias();
+    }, []);
+  useEffect(() => {
+        const buscarDados = async () => {
+          try {
+            const resposta = await fetch('http://localhost:5187/api/Auditorias/Estatisticas');
+            if (resposta.ok) {
+              setDadosAud(await resposta.json());
+            }
+          } catch (error) {
+            // Fallback local
+            setDadosAud([
+              { totalAuditorias:'--', empresasAuditadas: '--', iso27001: '--', iso27701: '--'}
+            ]);
+          } finally {
+            setCarregando(false);
+          }
+        };
+        buscarDados();
+      }, []);
+  useEffect(() => {
+        const buscarModulos = async () => {
+          try {
+            const resposta = await fetch('http://localhost:5187/api/Modulos');
+            if (resposta.ok) {
+              setModulos(await resposta.json());
+            }
+          } catch (error) {
+            // Fallback local
+            setModulos([
+              { id: 1, nome: 'ISO 27001' },
+              { id: 2, nome: 'ISO 27701' }
+            ]);   
+          } finally {
+            setCarregando(false);
+          }
+        };
+        buscarModulos();
+      }, []);
   // ================= LÓGICA DO BOTÃO PRINCIPAL =================
   const lidarComNovaAuditoria = () => {
     if (empresaSelecionada) {
@@ -40,7 +94,7 @@ export default function Dashboard() {
     e.preventDefault();
     setErro('');
 
-    if (!formData.name || !formData.cnpj) {
+    if (!formData.nome || !formData.cnpj) {
       setErro('Por favor, preencha o Nome e o CNPJ da empresa.');
       return;
     }
@@ -84,9 +138,10 @@ export default function Dashboard() {
       setCarregandoSessao(false);
     }
   };
-
+  if (carregando) return <div className="p-10 text-white text-center">Processando dados...</div>;
   return (
     <>
+    
       {/* CABEÇALHO DO DASHBOARD */}
       <div className="mb-8 flex justify-between items-end">
         <div>
@@ -105,24 +160,24 @@ export default function Dashboard() {
       </div>
 
       {/* KPIs (MANTIDOS IGUAIS) */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
         <div className="bg-slate-900 p-6 rounded-xl border border-slate-800 shadow-sm border-l-4 border-l-indigo-500">
-            <h3 className="text-sm font-medium text-slate-400 mb-1">Índice Médio de Conformidade</h3>
-            <p className="text-3xl font-bold text-white">85%</p>
-            <p className="text-xs text-emerald-400 mt-2 font-medium">↑ 4% desde a última avaliação</p>
+            <h3 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Total de Auditorias Realizadas</h3>
+            <p className="text-4xl font-bold text-white">{dadosAud.totalAuditorias}</p>
         </div>
         <div className="bg-slate-900 p-6 rounded-xl border border-slate-800 shadow-sm border-l-4 border-l-amber-500">
-            <h3 className="text-sm font-medium text-slate-400 mb-1">Auditorias em Andamento</h3>
-            <p className="text-3xl font-bold text-white">3</p>
-            <p className="text-xs text-slate-500 mt-2">Módulos pendentes de revisão</p>
+            <h3 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Empresas Auditadas</h3>
+            <p className="text-4xl font-bold text-white">{dadosAud.empresasAuditadas}</p>
         </div>
         <div className="bg-slate-900 p-6 rounded-xl border border-slate-800 shadow-sm border-l-4 border-l-rose-500">
-            <h3 className="text-sm font-medium text-slate-400 mb-1">Não Conformidades Críticas</h3>
-            <p className="text-3xl font-bold text-white">12</p>
-            <p className="text-xs text-rose-400 mt-2 font-medium">Atenção requerida nos controles</p>
+            <h3 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Auditorias ISO 27001</h3>
+            <p className="text-4xl font-bold text-white">{dadosAud.iso27001}</p>
+        </div>
+        <div className="bg-slate-900 p-6 rounded-xl border border-slate-800 shadow-sm border-l-4 border-l-rose-500">
+            <h3 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Auditorias ISO 27701</h3>
+            <p className="text-4xl font-bold text-white">{dadosAud.iso27701}</p>
         </div>
       </div>
-
       {/* TABELA (MANTIDA IGUAL) */}
       <div className="bg-slate-900 rounded-xl shadow-sm border border-slate-800 overflow-hidden">
         <div className="px-6 py-5 border-b border-slate-800 flex justify-between items-center">
@@ -135,12 +190,11 @@ export default function Dashboard() {
                 <th className="px-6 py-4">Empresa</th>
                 <th className="px-6 py-4">Norma</th>
                 <th className="px-6 py-4">Data</th>
-                <th className="px-6 py-4">Status</th>
                 <th className="px-6 py-4 text-right">Score</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-800">
-              {ultimasAuditorias.map((auditoria) => (
+              {auditorias.map((auditoria) => (
                 <tr key={auditoria.id} className="hover:bg-slate-800/50 transition-colors">
                   <td className="px-6 py-4 font-medium text-white">{auditoria.empresa}</td>
                   <td className="px-6 py-4">
@@ -149,8 +203,7 @@ export default function Dashboard() {
                     </span>
                   </td>
                   <td className="px-6 py-4">{auditoria.data}</td>
-                  <td className="px-6 py-4 text-slate-300">{auditoria.status}</td>
-                  <td className="px-6 py-4 text-right font-bold text-white">{auditoria.score}</td>
+                  <td className="px-6 py-4 text-right font-bold text-white">{auditoria.score}%</td>
                 </tr>
               ))}
             </tbody>
@@ -171,14 +224,12 @@ export default function Dashboard() {
               <p className="text-sm text-slate-400 mb-6">Qual módulo deseja avaliar para <strong>{empresaSelecionada.nome}</strong>?</p>
               
               <div className="flex flex-col gap-3">
-                <button onClick={() => iniciarAuditoriaExistente(1)} className="w-full px-4 py-3 bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-indigo-500 text-white rounded-lg font-medium transition-all text-left flex justify-between items-center group">
-                  ISO/IEC 27001 (SI)
+                {modulos.map((modulo) => (
+                  <button onClick={() => iniciarAuditoriaExistente(modulo.id)} className="w-full px-4 py-3 bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-indigo-500 text-white rounded-lg font-medium transition-all text-left flex justify-between items-center group">
+                  {modulo.nome}
                   <svg className="w-5 h-5 text-slate-500 group-hover:text-indigo-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"></path></svg>
                 </button>
-                <button onClick={() => iniciarAuditoriaExistente(2)} className="w-full px-4 py-3 bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-indigo-500 text-white rounded-lg font-medium transition-all text-left flex justify-between items-center group">
-                  ISO/IEC 27701 (PI)
-                  <svg className="w-5 h-5 text-slate-500 group-hover:text-indigo-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"></path></svg>
-                </button>
+                ))}
               </div>
             </div>
           )}
@@ -211,12 +262,11 @@ export default function Dashboard() {
                 <div className="mb-8">
                   <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Norma de Referência</label>
                   <div className="flex gap-4">
-                    <button type="button" onClick={() => setFormData({...formData, moduloId: 1})} className={`flex-1 py-3 px-4 rounded-lg border font-medium transition-all ${formData.moduloId === 1 ? 'bg-indigo-600 border-indigo-500 text-white shadow-[0_0_15px_rgba(79,70,229,0.4)]' : 'bg-[#1e293b] border-slate-700 text-slate-400 hover:border-slate-500'}`}>
-                      ISO 27001 (SI)
-                    </button>
-                    <button type="button" onClick={() => setFormData({...formData, moduloId: 2})} className={`flex-1 py-3 px-4 rounded-lg border font-medium transition-all ${formData.moduloId === 2 ? 'bg-indigo-600 border-indigo-500 text-white shadow-[0_0_15px_rgba(79,70,229,0.4)]' : 'bg-[#1e293b] border-slate-700 text-slate-400 hover:border-slate-500'}`}>
-                      ISO 27701 (PI)
-                    </button>
+                    {modulos.map((modulo) => (
+                      <button type="button" onClick={() => setFormData({...formData, moduloId: modulo.id})} className={`flex-1 py-3 px-4 rounded-lg border font-medium transition-all ${formData.moduloId === modulo.id ? 'bg-indigo-600 border-indigo-500 text-white shadow-[0_0_15px_rgba(79,70,229,0.4)]' : 'bg-[#1e293b] border-slate-700 text-slate-400 hover:border-slate-500'}`}>
+                        {modulo.nome}
+                      </button>
+                    ))}
                   </div>
                 </div>
 

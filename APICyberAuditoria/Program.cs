@@ -1,4 +1,4 @@
-using APICyberAuditoria.Models;
+using APICyberAuditoria.Data;
 using Microsoft.AspNetCore.Authentication.Negotiate;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
@@ -51,5 +51,5 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-
+await app.Services.SeedModulosIsosAsync();
 app.Run();

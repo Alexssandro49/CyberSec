@@ -131,6 +131,16 @@
   },
   {
     "ContainingType": "AuditoriasController",
+    "Method": "GetEstatisticasDashboard",
+    "RelativePath": "api/Auditorias/Estatisticas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuditoriasController",
     "Method": "GetAuditoriasRecentes",
     "RelativePath": "api/Auditorias/Recentes",
     "HttpMethod": "GET",

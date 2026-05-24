@@ -1,3 +1,4 @@
+using APICyberAuditoria.Data;
 using APICyberAuditoria.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -33,6 +34,7 @@ public class PerguntasController : ControllerBase
         var perguntasDto = perguntas.Select(p => new
         {
             id = p.Id,
+            nome=p.Nome,
             descricao = p.Descricao,
             controle = new
             {

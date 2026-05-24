@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using APICyberAuditoria.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace APICyberAuditoria.Models
+namespace APICyberAuditoria.Data
 {
     public class DBAuditoria : DbContext
     {

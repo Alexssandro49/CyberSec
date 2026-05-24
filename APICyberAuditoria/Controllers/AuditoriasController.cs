@@ -1,3 +1,4 @@
+using APICyberAuditoria.Data;
 using APICyberAuditoria.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -20,21 +21,78 @@ public class AuditoriasController : ControllerBase
     {
         return await _context.Auditorias.ToListAsync();
     }
+
+    [HttpGet("Estatisticas")]
+    public async Task<ActionResult> GetEstatisticasDashboard()
+    {
+        try
+        {
+            // 1. Total Geral de Auditorias iniciadas ou concluídas
+            var totalAuditorias = await _context.Auditorias.CountAsync();
+
+            // 2. Total de Empresas Únicas (Distinct) que possuem alguma auditoria vinculada
+            var totalEmpresasAuditadas = await _context.Auditorias
+                .Select(a => a.EmpresaId)
+                .Distinct()
+                .CountAsync();
+
+            // 3. Auditorias Específicas do ISO 27001 (Considerando ModuloId == 1)
+            // Usamos Any() para verificar se existe alguma resposta ligada a este módulo
+            var totalIso27001 = await _context.Auditorias
+                .CountAsync(a => a.Respostas.Any(r => r.Pergunta.Controle.ModuloId == 1));
+
+            // 4. Auditorias Específicas do ISO 27701 (Considerando ModuloId == 2)
+            var totalIso27701 = await _context.Auditorias
+                .CountAsync(a => a.Respostas.Any(r => r.Pergunta.Controle.ModuloId == 2));
+
+            // 5. Monta o objeto anônimo formatado para o React
+            var estatisticas = new
+            {
+                totalAuditorias = totalAuditorias,
+                empresasAuditadas = totalEmpresasAuditadas,
+                iso27001 = totalIso27001,
+                iso27701 = totalIso27701
+            };
+
+            return Ok(estatisticas);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, $"Erro ao processar as estatísticas: {ex.Message}");
+        }
+    }
     [HttpGet("Recentes")]
     public async Task<ActionResult> GetAuditoriasRecentes()
     {
-        var auditoriasRecentes = await _context.Auditorias.Include(s=>s.Empresa)
-            .OrderByDescending(a => a.Id)
+        var auditoriasRecentes = await _context.Auditorias
+            .Include(a => a.Respostas)
+            .Include(a => a.Empresa)
+            .OrderByDescending(a => a.Data)
             .Take(5)
             .ToListAsync();
-        var resultados = auditoriasRecentes.Select(a => new
+        var resultados = auditoriasRecentes.Select(a =>
         {
-            id=a.Id,
-            empresa = a.Empresa.Nome ?? "Empresa não especificada",
-            norma= _context.Auditorias.Where(s => s.Id == a.Id).SelectMany(s => s.Respostas).Select(s => s.Pergunta.Controle.Modulo.Nome).FirstOrDefault() ?? "Módulo não especificado",
-            data = a.Data,
-            score =""
-            
+            double totalSim = a.Respostas.Count(r => r.Resposta == TipoReposta.Sim);
+            double totalNao = a.Respostas.Count(r => r.Resposta == TipoReposta.Não);
+
+            double totalValidas = totalSim + totalNao;
+
+            // Calcula a porcentagem. Se não houver nenhuma resposta válida (só N/A), a nota é 0.
+            int scoreCalculado = totalValidas > 0
+                                 ? (int)Math.Round((totalSim / totalValidas) * 100)
+                                 : 0;
+
+            // Descobre o nome do módulo com base na primeira pergunta
+            string nomeModulo = _context.Auditorias.Where(s => s.Id == a.Id).SelectMany(s => s.Respostas).Select(s => s.Pergunta.Controle.Modulo.Nome).FirstOrDefault() ?? "Módulo não especificado";
+
+            return new
+            {
+                id = a.Id,
+                empresa = a.Empresa.Nome ?? "Empresa não especificada",
+                norma = nomeModulo, // Corrigido a grafia de 'modulu' para 'modulo'
+                data = a.Data.ToString("dd/MM/yyyy"),
+                score = scoreCalculado
+            };
         });
 
         return Ok(resultados);

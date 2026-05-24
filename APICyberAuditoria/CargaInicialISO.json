@@ -1,0 +1,676 @@
+[
+  {
+    "Nome": "27001",
+    "Controles": [
+      {
+        "Nome": "Controles organizacionais",
+        "Perguntas": [
+          {
+            "Nome": "Políticas de segurança da informação",
+            "Descricao": "Tem o controle preventivo de definição e aprovação da política de segurança da informação e as políticas específicas."
+          },
+          {
+            "Nome": "Papéis e responsabilidades pela segurança da informação",
+            "Descricao": "Tem o controle preventivo de definir os papéis de para a implementar a segurança da informação segundo as necessidades da organização."
+          },
+          {
+            "Nome": "Segregação de funções",
+            "Descricao": "Tem como controle preventivo assegurar que nenhum indivíduo tenha funções conflitantes e segregar responsabilidades."
+          },
+          {
+            "Nome": "Responsabilidades da direção",
+            "Descricao": "Tem como controle preventivo da direção requerer que todo o pessoal aplique a política de segurança da informação estabelecida"
+          },
+          {
+            "Nome": "Contato com autoridades",
+            "Descricao": "Tem como controle preventivo manter o contato com as organizações responsáveis. Tem como controle corretivo de contactar as organizações responsáveis caso um incidente ocorra."
+          },
+          {
+            "Nome": "Contato com grupos de interesse especial",
+            "Descricao": "Tem como controle preventivo de estabelecer e manter contato com grupos, organizações de especialistas em segurança, para auxiliar o desenvolvimento Tem como controle corretivo de estabelecer e manter contato com grupos, organizações de especialistas em segurança, para auxiliar na resposta de uma eventual crise"
+          },
+          {
+            "Nome": "Inteligência de ameaças",
+            "Descricao": "Tem como controle preventivo coleta e aprendizado informações relacionadas a ameaças à segurança da informação, para produzir contramedidas. Tem como controle detectivo coleta e aprendizado informações relacionadas a ameaças à segurança da informação, para produzir soluções de uma ameaça Tem como controle corretivo coleta e aprendizado informações relacionadas a ameaças à segurança da informação, para produzir soluções dos problemas encontrados e contramedidas dos futuros."
+          },
+          {
+            "Nome": "Segurança da informação no gerenciamento de projetos",
+            "Descricao": "Tem como controle preventivo integrar a segurança da informação ao gerenciamento de projetos"
+          },
+          {
+            "Nome": "Inventário de informações e outros ativos associados",
+            "Descricao": "Tem como controle preventivo de criar, manter e monitorar um inventário de informações e outros ativos associados a fim de preservar a sua segurança da informação."
+          },
+          {
+            "Nome": "Uso aceitável de informações e outros ativos associados",
+            "Descricao": "Tem como controle preventivo criar regras para o uso aceitável e procedimentos para o manuseio de informações e outros ativos associados sejam identificados, documentados e implementados."
+          },
+          {
+            "Nome": "Devolução de ativos",
+            "Descricao": "Tem como controle preventivo criar regras ou meios que conforme apropriado, devolvam todos os ativos da organização em sua posse após a mudança ou encerramento da contratação ou acordo."
+          },
+          {
+            "Nome": "Classificação das informações",
+            "Descricao": "Tem como controle preventivo a classificação da informação de acordo com as necessidades de segurança da informação da organização."
+          },
+          {
+            "Nome": "Rotulagem de informações",
+            "Descricao": "Tem como controle preventivo dos procedimentos de rotulagem de informações, desenvolvendo e implementando de acordo com o esquema de classificação de informações adotado."
+          },
+          {
+            "Nome": "Transferência de informações",
+            "Descricao": "Tem como controle preventivo na transferência de informações implementando regras, procedimentos ou acordos de transferência."
+          },
+          {
+            "Nome": "Controle de acesso",
+            "Descricao": "Tem como controle preventivo implementar regras para controlar o acesso físico e lógico às informações."
+          },
+          {
+            "Nome": "Gestão de identidade",
+            "Descricao": "Tem como controle preventivo do gerenciamento do ciclo de vida completo das identidades. Identificação de certas áreas para certo indivíduo, e manutenção dessas credenciais"
+          },
+          {
+            "Nome": "Informações de autenticação",
+            "Descricao": "Tem como controle preventivo de gestão das informações de autenticação, incluindo treinamento."
+          },
+          {
+            "Nome": "Direitos de acesso",
+            "Descricao": "Tem como controle preventivo gerenciamento de acesso às informações e outros ativos sejam provisionados, analisados criticamente, modificados e removidos de acordo com a política"
+          },
+          {
+            "Nome": "Segurança da informação nas relações com fornecedores",
+            "Descricao": "Tem como controle preventivo da implementação de procedimentos para gerenciar a segurança e os riscos associados com o uso dos produtos ou serviços dos fornecedores."
+          },
+          {
+            "Nome": "Abordagem da segurança da informação nos contratos de fornecedores",
+            "Descricao": "Tem como controle preventivo de acordar requisitos relevantes de segurança com cada fornecedor com base no tipo de relacionamento com o fornecedor."
+          },
+          {
+            "Nome": "Gestão da segurança da informação na cadeia de fornecimento de TIC",
+            "Descricao": "Tem como controle preventivo para acordar os procedimentos da cadeia de fornecimento de produtos e serviços de TIC(utilizam tecnologia para obter, processar, armazenar e disseminar informações )."
+          },
+          {
+            "Nome": "Monitoramento, análise crítica e gestão de mudanças dos serviços de fornecedores",
+            "Descricao": "Utiliza controle preventivo para monitorar, analisar, avaliar e gerenciar regularmente a mudança nas práticas de segurança da informação dos fornecedores e na prestação de serviços. EX: Monitorar mudanças nos serviços de fornecedores Mudanças e aprimoramento das redes Uso de novas tecnologias;"
+          },
+          {
+            "Nome": "Segurança da informação para uso de serviços em nuvem",
+            "Descricao": "Utiliza controle preventivo para os processos de aquisição, uso, gestão e saída de serviços em nuvem sejam estabelecidos de acordo com os requisitos de segurança da informação da organização.EX: Quais controles de segurança da informação são gerenciados pelo provedor de serviços em nuvem e quais são gerenciados pela organização como cliente de serviço em nuvem."
+          },
+          {
+            "Nome": "Planejamento e preparação da gestão de incidentes de segurança da informação",
+            "Descricao": "Utiliza controle corretivo estabelecendo processos, papéis e responsabilidades para a gestão de incidentes."
+          },
+          {
+            "Nome": "Avaliação e decisão sobre eventos de segurança da informação",
+            "Descricao": "Utiliza controle detectivo para fazer a avaliação dos “eventos” de segurança da informação, para efetuar a categorização e priorização de tais eventos."
+          },
+          {
+            "Nome": "Resposta a incidentes de segurança da informação",
+            "Descricao": "Utiliza controle corretivo para assegurar uma resposta eficiente e eficaz aos incidentes de segurança da informação. Ou ao menos que sejam respondidos de acordo com os procedimentos documentados."
+          },
+          {
+            "Nome": "Aprendizado com incidentes de segurança da informação",
+            "Descricao": "Utiliza controle preventivo para gerenciar o conhecimento adquirido com incidentes de segurança da informação seja usado para fortalecer e melhorar os controles de segurança da informação."
+          },
+          {
+            "Nome": "Coleta de evidências",
+            "Descricao": "Utiliza controle corretivo para a implementação e reorganização de procedimentos de identificação, coleta, aquisição e preservação de evidências relacionadas a eventos de segurança da informação."
+          },
+          {
+            "Nome": "Segurança da informação durante a disrupção",
+            "Descricao": "Utiliza controle preventivo para o planejamento e preparação para assim manter a segurança da informação em um nível apropriado durante a disrupção. Utiliza controle corretivo para manter os controles de segurança da informação existentes durante a disrupção."
+          },
+          {
+            "Nome": "Prontidão de TIC para continuidade de negócios",
+            "Descricao": "Utiliza controle corretivo para com o planejamento assegurar a disponibilidade das informações da organização e outros ativos associados durante a disrupção"
+          },
+          {
+            "Nome": "Requisitos legais, estatutários, regulamentares e contratuais",
+            "Descricao": "Utiliza controle preventivo para sempre os requisitos sejam identificados, documentados e atualizados.Assim mantendo a conformidade com requisitos legais, estatutários, regulamentares e contratuais pertinentes à segurança da informação"
+          },
+          {
+            "Nome": "Direitos de propriedade intelectual",
+            "Descricao": "Utiliza controle preventivo para que a organização implemente procedimentos adequados para proteger os direitos de propriedade intelectual. Assim assegurando o compliance dos requisitos legais, estatutários, regulamentares e contratuais relacionados aos direitos de propriedade intelectual e ao uso de produtos proprietários."
+          },
+          {
+            "Nome": "Proteção de registros",
+            "Descricao": "Utiliza controle preventivo para que os registros sejam protegidos contra perdas, destruição, falsificação, acesso não autorizado e liberação não autorizada. Incluindo mudança tecnológica(ISO 15489."
+          },
+          {
+            "Nome": "Privacidade e proteção de DP",
+            "Descricao": "Utiliza controle preventivo para que a organização identifique e atenda aos requisitos relativos à preservação da privacidade e proteção de DP de acordo com as leis. Assim assegurando o compliance dos requisitos legais, estatutários, regulamentares e contratuais"
+          },
+          {
+            "Nome": "Análise crítica independente da segurança da informação",
+            "Descricao": "Utiliza controle preventivo para elaborar formas de gerenciar a segurança da informação e sua implementação independente a intervalos planejados. Utiliza controle corretivo para elaborar formas de gerenciar a segurança da informação e sua implementação quando ocorrem mudanças significativas."
+          },
+          {
+            "Nome": "Conformidade com políticas, regras e normas para segurança da informação",
+            "Descricao": "Utiliza controle preventivo a análise em intervalos regulares o compliance da política de segurança da informação da organização, políticas, regras e normas de temas específicos"
+          },
+          {
+            "Nome": "Documentação dos procedimentos de operação",
+            "Descricao": "Utiliza controle preventivo da organização dos recursos de tratamento da informação sejam documentados e disponibilizados. Utiliza controle corretivo para reaver os procedimentos de operação dos recursos de tratamento da informação e disponibilizá-los novamente."
+          }
+        ]
+      },
+      {
+        "Nome": "Gestão_de_ativos",
+        "Perguntas": []
+      },
+      {
+        "Nome": "Segurança_fisica",
+        "Perguntas": []
+      },
+      {
+        "Nome": "Segurança_de_sistemas_ e_ rede",
+        "Perguntas": []
+      },
+      {
+        "Nome": "Segurança_de_aplicações",
+        "Perguntas": []
+      },
+      {
+        "Nome": "Configuração_segura",
+        "Perguntas": []
+      },
+      {
+        "Nome": "Gestão_de_identidade_ e_acesso",
+        "Perguntas": []
+      },
+      {
+        "Nome": "Gestão_de_ ameaças_e_vulnerabilidades",
+        "Perguntas": []
+      },
+      {
+        "Nome": "Continuidade",
+        "Perguntas": []
+      },
+      {
+        "Nome": "Gestão_de_evento_de_ segurança_da_informação",
+        "Perguntas": []
+      },
+      {
+        "Nome": "Controles de pessoas",
+        "Perguntas": [
+          {
+            "Nome": "Seleção",
+            "Descricao": "Utiliza controle preventivo para assegurar que todo o pessoal seja elegível e adequado para os papéis por meio de verificações de antecedentes de todos os candidatos a serem contratados"
+          },
+          {
+            "Nome": "Termos e condições de contratação",
+            "Descricao": "Utiliza controle preventivo para que nos contratos trabalhistas que o pessoal entenda suas responsabilidades de segurança da informação para os papéis para os quais eles são considerados.(ações tomadas caso não cumpram)"
+          },
+          {
+            "Nome": "Conscientização, educação e treinamento em segurança da informação",
+            "Descricao": "Utiliza controle preventivo para efetuar e gerenciar que as partes interessadas relevantes recebam treinamento, educação e conscientização em segurança da informação apropriados e atualizações regulares da política de segurança da informação da organização."
+          },
+          {
+            "Nome": "Processo disciplinar",
+            "Descricao": "Utiliza controle preventivo para criar um processo disciplinar formalizado e comunicado para assim assegurar que o pessoal e outras partes interessadas, pertinentes entendam as consequências da violação da política de segurança da informação"
+          },
+          {
+            "Nome": "Responsabilidades após encerramento ou mudança da contratação",
+            "Descricao": "Utiliza controle preventivo para assim que um desligamento ocorra tenham processos para proteger os interesses da organização como parte do processo de mudança. Isso pode incluir confidencialidade de informações, propriedade intelectual e outros conhecimentos obtidos, bem como responsabilidades contidas em qualquer outro acordo de confidencialidade"
+          },
+          {
+            "Nome": "Acordos de confidencialidade ou não divulgação",
+            "Descricao": "Utiliza controle preventivo para a identificação e proteção com análise em intervalos irregulares dos documentos para assim manter a confidencialidade das informações acessíveis pelo pessoal ou por partes externas."
+          },
+          {
+            "Nome": "Trabalho remoto",
+            "Descricao": "Utiliza controle preventivo para que medidas sejam implementadas para assim assegurar que as informações acessadas, tratadas ou armazenadas fora das instalações da organização, durante o acesso remoto. Utiliza controle corretivo para a implementação de medidas se as informações acessadas, tratadas e armazenadas fora das instalações da organização tenham sido “violadas” por conta do trabalho remoto."
+          },
+          {
+            "Nome": "Relato de eventos de segurança da informação",
+            "Descricao": "Utiliza controle detectivo para a criação e manutenção de um mecanismo da organização em que possam ser relatados os eventos de segurança da informação observados ou suspeitos. Assim aumentando o tempo resposta e identificação."
+          }
+        ]
+      },
+      {
+        "Nome": "Controles físicos",
+        "Perguntas": [
+          {
+            "Nome": "Perímetros de segurança física",
+            "Descricao": "Utiliza controle preventivo para criar e monitorar perímetros de segurança, áreas que contenham informações e outros ativos associados. Prédio(Concreto, ferro). Alarmes de incêndio."
+          },
+          {
+            "Nome": "Entrada física",
+            "Descricao": "Utiliza controle preventivo para assegurar que apenas tenham acesso físico às informações por entradas autorizadas, registradas e monitoradas."
+          },
+          {
+            "Nome": "Segurança de escritórios, salas e instalações",
+            "Descricao": "Utiliza controle preventivo para o planejamento e implementação de segurança física nos escritórios, salas e instalações(portarias)."
+          },
+          {
+            "Nome": "Monitoramento de segurança física",
+            "Descricao": "Utiliza controle preventivo para monitoramento contínuo das instalações. Utiliza controle detectivo para detectar e impedir o acesso não autorizado."
+          },
+          {
+            "Nome": "Proteção contra ameaças físicas e ambientais",
+            "Descricao": "Utiliza controle preventivo para aumentar a proteção contra ameaças físicas e ambientais, como desastres naturais e outras ameaças físicas intencionais ou não intencionais à infraestrutura."
+          },
+          {
+            "Nome": "Trabalho em áreas seguras",
+            "Descricao": "Utiliza controle preventivo para projetar e implementar áreas seguras contra danos e interferência não autorizada do pessoal que trabalha nessas áreas."
+          },
+          {
+            "Nome": "Mesa limpa e tela limpa",
+            "Descricao": "Utiliza controle preventivo para definir, aplicar e fiscalizar regras de: Mesa limpa e tela limpa: Não deixar documentos, pendrives dentre outros na tela ou em cima da mesa. Para evitar vazamentos"
+          },
+          {
+            "Nome": "Localização e proteção de equipamentos",
+            "Descricao": "Utiliza controle preventivo para o posicionamento dos equipamentos de modo que minimiza o acesso desnecessário e dificulta o acesso não autorizado dos equipamentos. EX:Deixar o único computador que pode atualizar o servidor em uma sala separada"
+          },
+          {
+            "Nome": "Segurança de ativos fora das instalações da organização",
+            "Descricao": "Utiliza controle preventivo para gerar barreiras restritivas tanto físicas quanto de caráter permissivo para a utilização de dispositivos fora das instalações da organização que armazene ou trate informações(telefones)."
+          },
+          {
+            "Nome": "Mídia de armazenamento",
+            "Descricao": "Utiliza controle preventivo para gerenciar e assegurar a divulgação, modificação, remoção ou destruição exclusivamente das informações apenas de forma autorizada sobre as mídias de armazenamento. EX: Exigir autorização para que os meios de armazenamento sejam removidos da organização e manter um registro dessas remoções, a fim de manter uma trilha de auditoria."
+          },
+          {
+            "Nome": "Serviços de infraestrutura",
+            "Descricao": "Utiliza controle preventivo de planejar para que as instalações de tratamento de informações sejam protegidas contra falhas de energia e outras disrupções causadas por falhas nos serviços de infraestrutura. Utiliza controle detectivo para reparar as instalações afetadas."
+          },
+          {
+            "Nome": "Segurança do cabeamento",
+            "Descricao": "Utiliza controle preventivo para que cabos que transportam energia ou dados ou que sustentam serviços de informação sejam protegidos contra interceptação, interferência ou danos."
+          },
+          {
+            "Nome": "Manutenção de equipamentos",
+            "Descricao": "Utiliza controle preventivo para monitorar e efetuar a manutenção se necessário dos equipamentos(PCs, servidores) contra perdas, danos, roubos ou comprometimento de informações."
+          },
+          {
+            "Nome": "Descarte seguro ou reutilização de equipamentos",
+            "Descricao": "Utiliza controle preventivo verificação dos equipamentos que contenham mídia de armazenamento e quaisquer dados confidenciais e software licenciado sejam removidos ou substituídos antes do descarte ou reutilização."
+          }
+        ]
+      },
+      {
+        "Nome": "Controles tecnológicos",
+        "Perguntas": [
+          {
+            "Nome": "Dispositivos endpoint do usuário",
+            "Descricao": "Utiliza controle preventivo para gerar medidas para a proteção das informações armazenadas, tratadas ou acessíveis por meio de dispositivos endpoint(todos os equipamentos físicos que se conectam à rede."
+          },
+          {
+            "Nome": "Direitos de acessos privilegiados",
+            "Descricao": "Utiliza controle preventivo para gerenciar a atribuição e o uso de direitos de acessos privilegiados. Assim assegurando que apenas usuários, componentes de software e serviços autorizados recebam direitos de acessos privilegiados"
+          },
+          {
+            "Nome": "Restrição de acesso à informação",
+            "Descricao": "Utiliza controle preventivo para restringir o acesso a informações e a outros ativos associados."
+          },
+          {
+            "Nome": "Acesso ao código-fonte",
+            "Descricao": "Utiliza controle preventivo para restringir o acesso ao código fonte só é disponibilizado para pessoas privilegiadas ou proprietários designados. Meio físico ou digital, nível de privilégio e acesso."
+          },
+          {
+            "Nome": "Autenticação segura",
+            "Descricao": "Utiliza controle preventivo para a implementação de tecnologias e procedimentos de autenticação seguros, com base em restrições de acesso e que seja adequada a classificação das informações a serem acessadas(certificados digitais, cartões inteligentes, tokens ou meios biométricos)."
+          },
+          {
+            "Nome": "Gestão de capacidade",
+            "Descricao": "Utiliza controle preventivo para monitorar e ir ajustando de acordo com a demanda atual do tratamento de informações, recursos humanos, escritórios e outros serviços de infraestrutura(Testes de estresse) Utiliza controle detectivo para resolver as pendências percebidas. Ex: RH. Mais servidores. Mais banda de rede. Ou menos."
+          },
+          {
+            "Nome": "Proteção contra malware",
+            "Descricao": "Utiliza controle preventivo, detectivo e corretivo para implementar, gerenciar e corrigir quando necessário. A implementação da proteção contra malware e a conscientização adequada do usuário."
+          },
+          {
+            "Nome": "Gestão de vulnerabilidades técnicas",
+            "Descricao": "Utiliza controle preventivo para gerar informações sobre as vulnerabilidades do sistema. E em caso de exposição da organização a tais vulnerabilidades sejam avaliadas e medidas apropriadas sejam tomadas. Testes de invasão planejados, documentados e repetíveis ou avaliações de vulnerabilidade por pessoas competentes e autorizadas para apoiar a identificação de vulnerabilidades."
+          },
+          {
+            "Nome": "Gestão de configuração",
+            "Descricao": "Utiliza controle preventivo o estabelecimento, documentação, monitoramento e implementação tanto em hardware, software e serviços e redes sejam configuradas corretamente com configurações de segurança necessárias, e que a configuração não seja alterada por alterações não autorizadas ou incorretas."
+          },
+          {
+            "Nome": "Exclusão de informações",
+            "Descricao": "Utiliza controle preventivo para o estabelecimento de regras e normas de exclusão de informações para evitar exposição."
+          },
+          {
+            "Nome": "Mascaramento de dados",
+            "Descricao": "Utiliza controle preventivo para limitar a exposição de dados confidenciais, incluindo DP, e cumprir requisitos legais, estatutários, regulamentares e contratuais. usando de acordo com a política específica por tema, controle de acesso, requisitos específicos por tema, requisitos de negócios e a legislação aplicável. EX: criptografia, substituição, anulação ou exclusão de caracteres"
+          },
+          {
+            "Nome": "Prevenção de vazamento de dados",
+            "Descricao": "Utiliza controle preventivo e detectivo para a aplicação de um meio para a prevenção e resposta para quando houver a divulgação e extração não autorizadas de informações Tem mecanismos ou instruções para evitar o vazamento de dados? Tem mecanismos ou instruções para “diminuir” o estrago se houver um vazamento de dados?"
+          },
+          {
+            "Nome": "Backup das informações",
+            "Descricao": "Utiliza controle corretivo para a aplicação e testes regularmente dos sistemas de backup, para assim evitar o corrompimento ou não funcionamento dos mesmos. Os Backups são verificados e testados regularmente? Tanto se podem ser colocados no sistema quanto a integridade de seu conteúdo."
+          },
+          {
+            "Nome": "Redundância dos recursos de tratamento de informações",
+            "Descricao": "Utiliza controle preventivo para a elaboração e implementação dos mecanismos suficientes de redundância para assim atender a disponibilidade e a criticidade das informações. EX: Tem mais de 1 fornecedor de Internet, luz ou sistemas essenciais"
+          },
+          {
+            "Nome": "Log",
+            "Descricao": "Utiliza controle detectivo para o registro, proteção, armazenamento e que a análise seja feita de atividades, exceções, falhas e outros eventos relevantes sejam produzidos. EX: Tem registro de ID, datas, horários …."
+          },
+          {
+            "Nome": "Atividades de monitoramento",
+            "Descricao": "Utiliza controle detectivo e corretivo para elaborar métodos para dificultar e quando ocorrer um incidente de segurança da informação. EX: Tense controle do tráfego de rede de saída e entrada. Acesso a sistemas, servidores, equipamentos de rede, sistema de monitoramento, aplicações críticas etc."
+          },
+          {
+            "Nome": "Sincronização do relógio",
+            "Descricao": "Utiliza controle detectivo para que todos os sistemas de tratamento de informações estejam sincronizados com fontes de tempo aprovadas."
+          },
+          {
+            "Nome": "Uso de programas utilitários privilegiados",
+            "Descricao": "Utiliza controle preventivo para gerenciar os programas utilitários para que não prejudique os controles do sistema e das aplicações para a segurança da informação."
+          },
+          {
+            "Nome": "Instalação de software em sistemas operacionais",
+            "Descricao": "Utiliza controle preventivo para a implementação de medidas para gerenciar com segurança a instalação de software em sistemas operacionais. EX: Apenas administradores treinados e autorizados podem realizar atualizações de software operacional."
+          },
+          {
+            "Nome": "Segurança de redes",
+            "Descricao": "Utiliza controle preventivo e detectivo para a proteção, gerenciamento e controle das informações em sistemas e aplicações. Qual o tipo e nível de classificação das informações que a rede pode suportar?"
+          },
+          {
+            "Nome": "Segurança dos serviços de rede",
+            "Descricao": "Utiliza controles preventivos para que sejam identificados, implementados e monitorados mecanismos de segurança, níveis de serviço e requisitos de serviços de rede."
+          },
+          {
+            "Nome": "Segregação de redes",
+            "Descricao": "Utiliza controle preventivo para dividir a rede em perímetros de segurança e controlar o tráfego entre eles com base nas necessidades de negócios."
+          },
+          {
+            "Nome": "Filtragem da web",
+            "Descricao": "Utiliza o controle preventivo para gerenciar o acesso a sites externos para reduzir a exposição a conteúdo malicioso. EX: Tem bloqueios contra sites que possuem uma função de upload de informações, a menos que seja permitido por razões comerciais válidas."
+          },
+          {
+            "Nome": "Uso de criptografia",
+            "Descricao": "Utiliza o controle preventivo para assegurar o uso adequado e eficaz da criptografia para proteger a confidencialidade, autenticidade ou integridade das informações de acordo com os requisitos de segurança das empresas e da informação, e levando em consideração os requisitos legais, estatutários, regulamentares e contratuais relacionados à criptografia."
+          },
+          {
+            "Nome": "Ciclo de vida de desenvolvimento seguro",
+            "Descricao": "Utiliza o controle preventivo para assegurar que a segurança da informação seja projetada e implementada dentro do ciclo de vida de desenvolvimento seguro de software e sistemas."
+          },
+          {
+            "Nome": "Requisitos de segurança da aplicação",
+            "Descricao": "Utiliza o controle preventivo para assegurar que todos os requisitos de segurança da informação sejam identificados e abordados ao desenvolver ou adquirir aplicações."
+          },
+          {
+            "Nome": "Princípios de arquitetura e engenharia de sistemas seguros",
+            "Descricao": "Utiliza o controle preventivo para assegurar que os sistemas de informação sejam projetados, implementados e operados com segurança dentro do ciclo de vida de desenvolvimento."
+          },
+          {
+            "Nome": "Codificação segura",
+            "Descricao": "Utiliza o controle preventivo para assegurar que o software seja escrito com segurança, reduzindo assim o número de potenciais vulnerabilidades de segurança da informação no software."
+          },
+          {
+            "Nome": "Testes de segurança em desenvolvimento e aceitação",
+            "Descricao": "Utiliza o controle preventivo para validar se os requisitos de segurança da informação são atendidos quando as aplicações ou códigos são implantados no ambiente de produção."
+          },
+          {
+            "Nome": "Desenvolvimento terceirizado",
+            "Descricao": "Utiliza os controles preventivo e detectivo para que a organização dirija, monitore e analise criticamente as atividades para que as medidas de segurança da informação requeridas pela organização sejam implementadas na terceirização do desenvolvimento de sistemas."
+          },
+          {
+            "Nome": "Separação dos ambientes de desenvolvimento, teste e produção",
+            "Descricao": "Utiliza o controle preventivo para a proteção do ambiente de produção e os dados de comprometimento por meio de atividades de desenvolvimento e teste. Assim fazendo com que ambientes de desenvolvimento, testes e produção sejam separados e protegidos."
+          },
+          {
+            "Nome": "Gestão de mudanças",
+            "Descricao": "Utiliza o controle preventivo para que quando há mudanças nos recursos de tratamento de informações e sistemas de informação. Eles estejam sujeitos às regras acordadas e um processo formal de documentação, especificação, testes, controle de qualidade e implementação gerenciada."
+          },
+          {
+            "Nome": "Informações de teste",
+            "Descricao": "Utiliza o controle preventivo para que as informações de teste sejam adequadamente selecionadas, protegidas e gerenciadas. Para assim verificar a proteção das informações operacionais utilizadas para testes."
+          },
+          {
+            "Nome": "Proteção de sistemas de informação durante os testes de auditoria",
+            "Descricao": "Utiliza o controle preventivo para minimizar o impacto da auditoria e outras atividades de garantia em sistemas operacionais e processos de negócio. EX: A avaliação de sistemas operacionais sejam planejados e acordados entre o testador e a gestão apropriada."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Nome": "27701",
+    "Controles": [
+      {
+        "Nome": "Condições para a coleta e tratamento",
+        "Perguntas": [
+          {
+            "Nome": "Identificação e documentação do propósito",
+            "Descricao": "A organização deve identificar e documentar os propósitos específicos pelos quais os DP serão tratados."
+          },
+          {
+            "Nome": "Identificação de bases legais",
+            "Descricao": "A organização deve determinar, documentar e ser capaz de demonstrar compliance com a base legal pertinente para o tratamento de DP para os propósitos identificados."
+          },
+          {
+            "Nome": "Determinação de quando e como o consentimento deve ser obtido",
+            "Descricao": "A organização deve determinar e documentar um processo pelo qual ela pode demonstrar se, quando e como o consentimento para tratamento de DP foi obtido dos titulares de DP."
+          },
+          {
+            "Nome": "Obtenção e registro do consentimento",
+            "Descricao": "A organização deve obter e registrar o consentimento dos titulares de DP de acordo com os processos documentados."
+          },
+          {
+            "Nome": "Avaliação de impacto e privacidade",
+            "Descricao": "A organização deve avaliar a necessidade de, e implementar onde apropriado, uma avaliação de impacto de privacidade sempre que um novo tratamento de DP ou mudanças no tratamento existente de DP forem planejadas."
+          },
+          {
+            "Nome": "Contratos com operadores de DP",
+            "Descricao": "A organização deve ter um contrato escrito com qualquer operador de DP que ela utilize e deve assegurar que seus contratos com operadores de DP contemplem a implementação dos controles apropriados no Anexo A."
+          },
+          {
+            "Nome": "Controlador conjunto de DP",
+            "Descricao": "A organização deve determinar os respectivos papéis e responsabilidades para os operadores de DP (incluindo requisitos de proteção de DP e segurança) com qualquer controlador de conjunto de DP."
+          },
+          {
+            "Nome": "Registros relacionados ao tratamento de DP",
+            "Descricao": "A organização deve determinar e manter, de forma segura, os registros necessários ao suporte às suas obrigações para o tratamento de DP."
+          }
+        ]
+      },
+      {
+        "Nome": "Obrigações com os titulares de DP",
+        "Perguntas": [
+          {
+            "Nome": "Determinação e cumprimento de obrigações com os titulares de DP",
+            "Descricao": "A organização deve determinar e documentar suas obrigações legais, regulatórias e de negócios com os titulares de DP, relacionadas ao tratamento de seus DP, e fornecer meios para atender a essas obrigações."
+          },
+          {
+            "Nome": "Determinação das informações para os titulares de DP",
+            "Descricao": "A organização deve determinar e documentar a informação a ser fornecida aos titulares de DP relacionadas ao tratamento de seus DP e o momento de tal disponibilização."
+          },
+          {
+            "Nome": "Fornecimento de informações aos titulares de DP",
+            "Descricao": "A organização deve fornecer aos titulares de DP, de forma clara e facilmente acessível, informações que identifiquem o controlador de DP e descrevam o tratamento de seus DP."
+          },
+          {
+            "Nome": "Fornecimento de mecanismo para modificar ou retirar o consentimento",
+            "Descricao": "A organização deve fornecer um mecanismo para que os titulares de DP modifiquem ou retirem os seus consentimentos."
+          },
+          {
+            "Nome": "Fornecimento de mecanismo para se opor ao tratamento de DP",
+            "Descricao": "A organização deve fornecer um mecanismo para os titulares de DP se oporem ao tratamento de seus DP."
+          },
+          {
+            "Nome": "Acesso, correção ou exclusão",
+            "Descricao": "A organização deve implementar políticas, procedimentos ou mecanismos para atender às suas obrigações com os titulares de DP para acessarem, corrigirem ou excluírem seus DP."
+          },
+          {
+            "Nome": "Obrigações dos controladores de DP para informar aos terceiros",
+            "Descricao": "A organização deve informar aos terceiros com os quais DP tenham sido compartilhados sobre qualquer modificação, retirada ou oposição pertinente aos DP compartilhados, e implementar políticas, procedimentos ou mecanismos apropriados para fazer isso."
+          },
+          {
+            "Nome": "Fornecimento de cópia dos DP tratados",
+            "Descricao": "A organização deve ser capaz de fornecer uma cópia dos DP que são tratados, quando requerida pelo titular de DP."
+          },
+          {
+            "Nome": "Tratamento de solicitações",
+            "Descricao": "A organização deve definir e documentar políticas e procedimentos para tratamento e resposta a solicitações legítimas dos titulares de DP."
+          },
+          {
+            "Nome": "Tomada de decisão automatizada",
+            "Descricao": "A organização deve identificar obrigações, incluindo obrigações legais, com os titulares de DP, resultantes de decisões tomadas pela organização, as quais são relativas ao titular de DP, baseadas exclusivamente em tratamento automatizado de DP, e deve ser capaz de demonstrar como atende a essas obrigações."
+          }
+        ]
+      },
+      {
+        "Nome": "Privacidade por design e privacidade por default",
+        "Perguntas": [
+          {
+            "Nome": "Limitação da coleta",
+            "Descricao": "A organização deve limitar a coleta de DP ao mínimo que seja pertinente, proporcional e necessário para os propósitos identificados."
+          },
+          {
+            "Nome": "Limitação do tratamento",
+            "Descricao": "A organização deve limitar o tratamento de DP ao que seja adequado, pertinente e necessário para os propósitos identificados."
+          },
+          {
+            "Nome": "Precisão e qualidade",
+            "Descricao": "A organização deve assegurar e documentar que os DP sejam precisos, completos e atualizados, quando necessário, para os propósitos para os quais são tratados, ao longo do ciclo de vida dos DP."
+          },
+          {
+            "Nome": "Objetivos de minimização de DP",
+            "Descricao": "A organização deve definir e documentar objetivos de minimização de dados e quais mecanismos (como desidentificação) são usados para alcançar aqueles objetivos."
+          },
+          {
+            "Nome": "Desidentificação e exclusão de DP final do tratamento",
+            "Descricao": "A organização deve excluir os DP ou entregá-los em uma forma que não permita identificação ou reidentificação dos titulares de DP, tão logo os DP originais não sejam mais necessários para o(s) propósito(s) identificado(s)."
+          },
+          {
+            "Nome": "Arquivos temporários",
+            "Descricao": "A organização deve assegurar que arquivos temporários criados como resultado do tratamento de DP sejam descartados (por exemplo, apagados ou destruídos) seguindo procedimentos documentados dentro de um período de tempo especificado e documentado."
+          },
+          {
+            "Nome": "Retenção",
+            "Descricao": "A organização não pode reter DP por período superior ao que seja necessário para os propósitos para os quais os DP sejam tratados."
+          },
+          {
+            "Nome": "Descarte",
+            "Descricao": "A organização deve ter políticas, procedimentos ou mecanismos documentados para o descarte de DP."
+          },
+          {
+            "Nome": "Controles de transmissão de DP",
+            "Descricao": "A organização deve submeter DP transmitidos (por exemplo, enviados a outra organização) por meio de rede de transmissão de dados aos controles apropriados projetados para assegurar que os dados cheguem ao seu destino pretendido."
+          }
+        ]
+      },
+      {
+        "Nome": "Compartilhamento, transferência e divulgação de DP",
+        "Perguntas": [
+          {
+            "Nome": "Identificação das bases para transferências de DP entre as jurisdições",
+            "Descricao": "A organização deve identificar e documentar as bases pertinentes para transferências de DP entre as jurisdições."
+          },
+          {
+            "Nome": "Países e organizações internacionais para os quais os DP podem ser transferidos",
+            "Descricao": "A organização deve especificar e documentar os países e organizações internacionais para os quais os DP podem ser transferidos."
+          },
+          {
+            "Nome": "Registros de transferência de DP",
+            "Descricao": "A organização deve registrar transferências de DP para ou de terceiros e assegurar cooperação com aqueles terceiros para apoiar requisições relacionadas com as obrigações com os titulares de DP."
+          },
+          {
+            "Nome": "Registros de divulgação de DP a terceiros",
+            "Descricao": "A organização deve registrar as divulgações de DP para terceiros, incluindo quais DP foram divulgados, para quem e em que momento."
+          }
+        ]
+      },
+      {
+        "Nome": "Condições para a coleta e tratamento",
+        "Perguntas": [
+          {
+            "Nome": "Objetivo: Demonstrar que o tratamento é legítimo, com base legal conforme as jurisdições aplicáveis e com propósitos claramente definidos e legítimos.",
+            "Descricao": "A organização deve assegurar, onde pertinente, que o contrato para tratar os DP aborde o papel da organização em prestar assistência nas obrigações do cliente (considerando a natureza do tratamento e as informações disponíveis para a organização)."
+          },
+          {
+            "Nome": "Propósitos da organização",
+            "Descricao": "A organização deve assegurar que os DP tratados em nome de um cliente sejam tratados apenas para os propósitos expressos nas instruções documentadas do cliente."
+          },
+          {
+            "Nome": "Uso para marketing e propaganda",
+            "Descricao": "A organização não pode usar os DP tratados sob um contrato para finalidades de marketing e propaganda sem estabelecer que o consentimento prévio foi obtido do respectivo titular de DP. A organização não pode tornar o fornecimento de tal consentimento uma condição para receber o serviço."
+          },
+          {
+            "Nome": "Instruções infratoras",
+            "Descricao": "A organização deve informar ao cliente se, em sua opinião, uma instrução de tratamento infringe requisitos legais aplicáveis."
+          },
+          {
+            "Nome": "Obrigações do cliente",
+            "Descricao": "A organização deve fornecer ao cliente informações apropriadas para que o cliente possa demonstrar compliance com suas obrigações."
+          },
+          {
+            "Nome": "Registros relativos ao tratamento de DP",
+            "Descricao": "A organização deve determinar e manter os registros necessários em apoio à demonstração de compliance com suas obrigações (como especificado no contrato aplicável) para o tratamento de DP conduzido em nome de um cliente."
+          }
+        ]
+      },
+      {
+        "Nome": "Obrigação com os titulares de DP",
+        "Perguntas": [
+          {
+            "Nome": "compliance com obrigações com os titulares de DP",
+            "Descricao": "A organização deve fornecer ao cliente os meios para estar em compliance com suas obrigações com os titulares de DP."
+          }
+        ]
+      },
+      {
+        "Nome": "Privacidade por design e privacidade por default",
+        "Perguntas": [
+          {
+            "Nome": "Arquivos temporários",
+            "Descricao": "A organização deve assegurar que arquivos temporários criados como resultado do tratamento de DP sejam descartados (por exemplo, apagados ou destruídos) seguindo procedimentos documentados dentro de um período de tempo especificado e documentado."
+          },
+          {
+            "Nome": "Devolução, transferência ou descarte de DP",
+            "Descricao": "A organização deve ser capaz de devolver, transferir ou descartar DP de forma segura. Ela deve também tornar sua política disponível para o cliente."
+          },
+          {
+            "Nome": "Controles de transmissão de DP",
+            "Descricao": "A organização deve submeter os DP transmitidos por meio de rede de transmissão de dados aos controles apropriados, que sejam projetados para assegurar que os dados cheguem ao seu destino pretendido."
+          }
+        ]
+      },
+      {
+        "Nome": "Compartilhamento, transferência e divulgação de DP",
+        "Perguntas": [
+          {
+            "Nome": "Fundamentação para a transferência de DP entre as jurisdições",
+            "Descricao": "A organização deve informar ao cliente de forma oportuna a fundamentação para as transferências de DP entre as jurisdições e quaisquer alterações pretendidas nesse sentido, para que o cliente possa se opor a tais alterações ou rescindir o contrato."
+          },
+          {
+            "Nome": "Países e organizações internacionais para os quais os DP podem ser transferidos",
+            "Descricao": "A organização deve especificar e documentar os países e organizações internacionais para os quais os DP podem ser transferidos."
+          },
+          {
+            "Nome": "Registros de divulgações de DP a terceiros",
+            "Descricao": "A organização deve registrar divulgações de DP para terceiros, incluindo quais DP foram divulgados, para quem e em que momento."
+          },
+          {
+            "Nome": "Notificação de solicitações de divulgação de DP",
+            "Descricao": "A organização deve notificar o cliente de quaisquer solicitações legalmente obrigatórias de divulgação de DP."
+          },
+          {
+            "Nome": "Divulgações de DP legalmente obrigatórias",
+            "Descricao": "A organização deve rejeitar quaisquer solicitações de divulgação de DP que não sejam legalmente obrigatórias, consultar o cliente correspondente antes de realizar qualquer divulgação de DP e aceitar quaisquer solicitações de divulgação de DP acordadas contratualmente e autorizadas pelo cliente correspondente."
+          },
+          {
+            "Nome": "Divulgação de subcontratados utilizados para tratar DP",
+            "Descricao": "Antes da utilização, a organização deve informar ao cliente se algum subcontratado é utilizado para tratar DP."
+          },
+          {
+            "Nome": "Envolvimento de subcontratado para tratar os DP",
+            "Descricao": "A organização somente deve envolver um subcontratado para tratar os DP conforme previsto no contrato com o cliente."
+          },
+          {
+            "Nome": "Troca de subcontratado para tratar de DP",
+            "Descricao": "A organização deve, no caso de haver autorização geral por escrito, informar o cliente sobre quaisquer alterações pretendidas relativas à inclusão ou substituição de subcontratados para tratar os DP, dando assim ao cliente a oportunidade de se opor a tais alterações."
+          }
+        ]
+      }
+    ]
+  }
+]

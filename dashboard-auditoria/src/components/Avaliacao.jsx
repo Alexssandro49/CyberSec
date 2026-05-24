@@ -15,7 +15,7 @@ export default function Avaliacao() {
   useEffect(() => {
     const buscarPerguntas = async () => {
       try {
-        const resposta = await fetch(`http://localhost:5187/api/Modulos/${id_modulo}/Perguntas`);
+        const resposta = await fetch(`http://localhost:5187/api/Perguntas/Modulo/${id_modulo}`);
         if (resposta.ok) {
           setPerguntas(await resposta.json());
         } else {
@@ -106,7 +106,7 @@ export default function Avaliacao() {
       if (respostaApi.ok) {
         alert("Auditoria finalizada e salva com sucesso!");
         localStorage.removeItem(cacheKey);
-        navigate('/dashboard');
+        navigate(`/relatorio/${id_empresa}/modulo/${id_modulo}`);
       } else {
         alert("Erro ao salvar as respostas na base de dados.");
       }
@@ -162,7 +162,7 @@ export default function Avaliacao() {
           {perguntaAtual.controle?.nome}
         </h3>
         <span className="bg-indigo-500/20 border border-indigo-500/30 text-indigo-300 px-4 py-1.5 rounded-full text-sml font-bold tracking-wide">
-          {perguntaAtual.controle?.categoria || "Geral"}
+          {perguntaAtual.controle?.controle || "Geral"}
         </span>
       </div>
 

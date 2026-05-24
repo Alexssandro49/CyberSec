@@ -75,7 +75,6 @@ export default function Relatorio() {
   if (carregando) return <div className="p-10 text-white text-center">Processando gráficos por escopo...</div>;
 
   const melhorAuditoria = [...historicoAuditorias].sort((a, b) => b.score - a.score)[0];
-  const ultimaAuditoria = historicoAuditorias[historicoAuditorias.length - 1];
 
   return (
     <div className="max-w-6xl mx-auto py-4 animate-fade-in text-slate-300">

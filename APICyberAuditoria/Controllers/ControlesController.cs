@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using APICyberAuditoria.Models;
 using Microsoft.AspNetCore.Authorization;
+using APICyberAuditoria.Data;
 
 [Route("api/[controller]")]
 [ApiController]

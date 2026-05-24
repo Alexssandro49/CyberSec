@@ -98,6 +98,18 @@
         }
       }
     },
+    "/api/Auditorias/Estatisticas": {
+      "get": {
+        "tags": [
+          "Auditorias"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Auditorias/Recentes": {
       "get": {
         "tags": [

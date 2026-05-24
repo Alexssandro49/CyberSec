@@ -1,3 +1,4 @@
+using APICyberAuditoria.Data;
 using APICyberAuditoria.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
