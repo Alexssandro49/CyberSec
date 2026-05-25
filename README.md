@@ -24,7 +24,7 @@ Certifique-se de possuir os seguintes pré-requisitos instalados em sua máquina
 Clone este repositório utilizando o comando:
 
 ```bash
-git clone <URL_DO_REPOSITORIO>
+git clone <https://github.com/Alexssandro49/CyberSec.git>
 ```
 ---
 
