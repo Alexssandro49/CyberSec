@@ -906,5 +906,21 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "UsuariosController",
+    "Method": "RefreshToken",
+    "RelativePath": "api/Usuarios/RefreshToken",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tokenAntigo",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

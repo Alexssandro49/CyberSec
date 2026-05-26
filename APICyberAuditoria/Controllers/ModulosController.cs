@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 [Route("api/[controller]")]
 [ApiController]
-[AllowAnonymous]
+[Authorize]
 public class ModulosController : ControllerBase
 {
     private readonly DBAuditoria _context;

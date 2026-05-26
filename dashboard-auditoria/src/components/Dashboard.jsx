@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useOutletContext, useNavigate } from 'react-router-dom';
+import { apiFetch } from '../services/apiService';
 
 export default function Dashboard() {
   // Puxa o contexto global que configuramos no Layout
@@ -18,11 +19,10 @@ export default function Dashboard() {
   const [formData, setFormData] = useState({ nome: '', cnpj: '', moduloId: null });
   const [carregandoSessao, setCarregandoSessao] = useState(false);
 
-
   useEffect(() => {
       const buscarAuditorias = async () => {
         try {
-          const resposta = await fetch('http://localhost:5187/api/Auditorias/Recentes');
+          const resposta = await apiFetch('/Auditorias/Recentes');
           if (resposta.ok) {
             setAuditorias(await resposta.json());
           }
@@ -40,7 +40,7 @@ export default function Dashboard() {
   useEffect(() => {
         const buscarDados = async () => {
           try {
-            const resposta = await fetch('http://localhost:5187/api/Auditorias/Estatisticas');
+            const resposta = await apiFetch('/Auditorias/Estatisticas');
             if (resposta.ok) {
               setDadosAud(await resposta.json());
             }
@@ -58,7 +58,7 @@ export default function Dashboard() {
   useEffect(() => {
         const buscarModulos = async () => {
           try {
-            const resposta = await fetch('http://localhost:5187/api/Modulos');
+            const resposta = await apiFetch('/Modulos');
             if (resposta.ok) {
               setModulos(await resposta.json());
             }
@@ -107,7 +107,7 @@ export default function Dashboard() {
 
     try {
       // 1. Cadastra a nova empresa na API
-      const resposta = await fetch('http://localhost:5187/api/Empresas', {
+      const resposta = await apiFetch('/Empresas', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ Nome: formData.nome, CNPJ: formData.cnpj }) 

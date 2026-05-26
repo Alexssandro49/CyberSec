@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 [Route("api/[controller]")]
 [ApiController]
-[AllowAnonymous]
+[Authorize]
 public class PerguntasController : ControllerBase
 {
     private readonly DBAuditoria _context;
@@ -17,17 +17,16 @@ public class PerguntasController : ControllerBase
 
     // GET: api/Pergunta
     [HttpGet]
-    [AllowAnonymous]
     public async Task<ActionResult<IEnumerable<Pergunta>>> GetPergunta()
     {
         return await _context.Perguntas.ToListAsync();
     }
-    [AllowAnonymous]
     [HttpGet("Modulo/{idModolu}")]
     public async Task<ActionResult<IEnumerable<Pergunta>>> GetPerguntaByAuditoria(int idModolu)
     {
         var perguntas = await _context.Perguntas.Where(p => p.Controle.ModuloId == idModolu).Include(p => p.Controle).ToListAsync();
-        if (perguntas == null || perguntas.Count == 0)
+        Modulo modulo = await _context.Modulos.FindAsync(idModolu);
+        if (perguntas == null || perguntas.Count == 0 || modulo == null)
         {
             return NotFound();
         }
@@ -38,8 +37,8 @@ public class PerguntasController : ControllerBase
             descricao = p.Descricao,
             controle = new
             {
-                nome = "Controles",
-                controle= p.Controle.Nome ?? "Sem controle"
+                nome = modulo.Nome ?? "Sem módulo",
+                controle = p.Controle.Nome ?? "Sem controle"
             }
         });
 

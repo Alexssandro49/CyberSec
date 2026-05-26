@@ -1,6 +1,6 @@
 [
   {
-    "Nome": "27001",
+    "Nome": "ISO/IEC 27001 (SI)",
     "Controles": [
       {
         "Nome": "Controles organizacionais",
@@ -433,7 +433,7 @@
     ]
   },
   {
-    "Nome": "27701",
+    "Nome": "ISO/IEC 27701 (PI)",
     "Controles": [
       {
         "Nome": "Condições para a coleta e tratamento",

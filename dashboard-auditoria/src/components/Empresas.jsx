@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useOutletContext, useNavigate } from 'react-router-dom';
-
+import { apiFetch } from '../services/apiService';
 export default function Empresas() {
   const [empresas, setEmpresas] = useState([]);
   const [carregando, setCarregando] = useState(true);
@@ -18,7 +18,7 @@ export default function Empresas() {
   useEffect(() => {
     const buscarEmpresas = async () => {
       try {
-        const resposta = await fetch('http://localhost:5187/api/Empresas');
+        const resposta = await apiFetch('/Empresas');
         if (resposta.ok) {
           setEmpresas(await resposta.json());
         }
@@ -51,7 +51,7 @@ export default function Empresas() {
 
     try {
       // Enviando os dados exatamente como a sua classe Empresa.cs exige
-      const resposta = await fetch('http://localhost:5187/api/Empresas', {
+      const resposta = await apiFetch('/Empresas', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ Nome: formData.nome, CNPJ: formData.cnpj }) 

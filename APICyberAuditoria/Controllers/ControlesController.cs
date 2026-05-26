@@ -6,7 +6,7 @@ using APICyberAuditoria.Data;
 
 [Route("api/[controller]")]
 [ApiController]
-[AllowAnonymous]
+[Authorize]
 public class ControlesController : ControllerBase
 {
     private readonly DBAuditoria _context;

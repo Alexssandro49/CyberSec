@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("APICyberAuditoria")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0fac47729a91e87c4f1788e3299b6bcc58835bf7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1b948d1e6fd38e631eac0ae05bf24e7ca218b64c")]
 [assembly: System.Reflection.AssemblyProductAttribute("APICyberAuditoria")]
 [assembly: System.Reflection.AssemblyTitleAttribute("APICyberAuditoria")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

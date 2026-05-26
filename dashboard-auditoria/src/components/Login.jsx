@@ -25,10 +25,10 @@ export default function Login() {
       if (resposta.ok) {
         // Login com sucesso (Status 200)
         const dadosUsuario = await resposta.json();
-        console.log('Login efetuado:', dadosUsuario);
         
         // Aqui você pode salvar os dados no localStorage e redirecionar para o Dashboard
         localStorage.setItem('usuario', JSON.stringify(dadosUsuario));
+        localStorage.setItem('token', dadosUsuario.token);
         window.location.href = '/dashboard';
       } else {
         // Trata os erros (Status 400 ou 404) retornados pela sua API C#

@@ -323,7 +323,6 @@ C:\Users\Alexs\OneDrive\Documents\Faculdade\CyberSec\APICyberAuditoria\obj\Debug
 C:\Users\Alexs\OneDrive\Documents\Faculdade\CyberSec\APICyberAuditoria\obj\Debug\net10.0\staticwebassets.development.json
 C:\Users\Alexs\OneDrive\Documents\Faculdade\CyberSec\APICyberAuditoria\obj\Debug\net10.0\staticwebassets.build.endpoints.json
 C:\Users\Alexs\OneDrive\Documents\Faculdade\CyberSec\APICyberAuditoria\obj\Debug\net10.0\swae.build.ex.cache
-C:\Users\Alexs\OneDrive\Documents\Faculdade\CyberSec\APICyberAuditoria\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 C:\Users\Alexs\OneDrive\Documents\Faculdade\CyberSec\APICyberAuditoria\obj\Debug\net10.0\APICyber.41E99A38.Up2Date
 C:\Users\Alexs\OneDrive\Documents\Faculdade\CyberSec\APICyberAuditoria\obj\Debug\net10.0\APICyberAuditoria.dll
 C:\Users\Alexs\OneDrive\Documents\Faculdade\CyberSec\APICyberAuditoria\obj\Debug\net10.0\refint\APICyberAuditoria.dll
@@ -332,3 +331,5 @@ C:\Users\Alexs\OneDrive\Documents\Faculdade\CyberSec\APICyberAuditoria\obj\Debug
 C:\Users\Alexs\OneDrive\Documents\Faculdade\CyberSec\APICyberAuditoria\obj\Debug\net10.0\ref\APICyberAuditoria.dll
 C:\Users\Alexs\OneDrive\Documents\Faculdade\CyberSec\APICyberAuditoria\obj\Debug\net10.0\APICyberAuditoria.sourcelink.json
 C:\Users\Alexs\OneDrive\Documents\Faculdade\CyberSec\APICyberAuditoria\bin\Debug\net10.0\CargaInicialISO.json
+C:\Users\Alexs\OneDrive\Documents\Faculdade\CyberSec\APICyberAuditoria\bin\Debug\net10.0\dotnet-tools.json
+C:\Users\Alexs\OneDrive\Documents\Faculdade\CyberSec\APICyberAuditoria\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

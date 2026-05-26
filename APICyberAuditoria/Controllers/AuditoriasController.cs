@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 [Route("api/[controller]")]
-[AllowAnonymous]
+[Authorize]
 [ApiController]
 public class AuditoriasController : ControllerBase
 {
@@ -102,12 +102,14 @@ public class AuditoriasController : ControllerBase
     {
         // 1. Fazemos TODOS os Includes necessários em uma única viagem ao banco de dados!
         var auditorias = await _context.Auditorias
+            .Include(a => a.Usuario)
+            .Include(a => a.Empresa)
             .Include(a => a.Respostas)
                 .ThenInclude(r => r.Pergunta)
                     .ThenInclude(p => p.Controle)
                         .ThenInclude(c => c.Modulo)
             .Where(a => a.EmpresaId == idEmpresa && a.Respostas.Any(r => r.Pergunta.Controle.ModuloId == idModulo))
-            .OrderByDescending(a => a.Data)
+            .OrderBy(a => a.Data)
             .ToListAsync();
 
         // 2. Mapeamento e Cálculo do Score na memória (muito mais rápido)
@@ -135,7 +137,9 @@ public class AuditoriasController : ControllerBase
                 id = a.Id,
                 modulo = nomeModulo, // Corrigido a grafia de 'modulu' para 'modulo'
                 data = a.Data.ToString("dd/MM/yyyy"),
-                score = scoreCalculado
+                score = scoreCalculado,
+                auditor= a.Usuario.Nome ?? "Usuário não especificado",
+                empresa = a.Empresa.Nome ?? "Empresa não especificada"
             };
         });
 

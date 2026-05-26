@@ -1,50 +1,45 @@
 import { useState, useEffect } from 'react';
-import { Outlet, useNavigate, NavLink } from 'react-router-dom';
+import { Outlet,  NavLink } from 'react-router-dom';
+import { apiFetch } from '../services/apiService';
 
 export default function Layout() {
-  const navigate = useNavigate();
-  
+  const [atualizarMenu, setAtualizarMenu] = useState(0);
   // 1. Estados para controlar a empresa selecionada e os módulos dela
   const [empresaSelecionada, setEmpresaSelecionada] = useState(null);
   const [modulos, setModulos] = useState([]);
   const usuario = JSON.parse(localStorage.getItem('usuario'));
-
+  const recarregarModulos = () => setAtualizarMenu(prev => prev + 1);
   const lidarComLogout = () => {
-    localStorage.clear();
-    navigate('/login');
+    localStorage.removeItem('usuario');
+    // O segredo está em usar window.location.href em vez de apenas o navigate, 
+    // para recarregar o estado do React do zero.
+    window.location.href = '/';
   };
 
   // 2. Busca os módulos na API sempre que uma empresa for selecionada
-  useEffect(() => {
-    if (empresaSelecionada) {
-      const buscarModulos = async () => {
-        try {
-          // Aqui fará a busca real na sua API C# no futuro
-          const resposta = await fetch(`http://localhost:5187/api/Modulos/Empresa/${empresaSelecionada.id}`);
-          if (resposta.ok) {
-            setModulos(await resposta.json());
-          } else {
-            throw new Error("Usando fallback local");
-          }
-        } catch (error) {
-          // Fallback para você já testar o visual para a apresentação
-          setModulos([
-            { id: 1, nome: 'ISO 27001 (SI)' },
-            { id: 2, nome: 'ISO 27701 (PI)' }
-          ]);
+ useEffect(() => {
+    if (!empresaSelecionada) return;
+
+    const buscarModulosDaEmpresa = async () => {
+      try {
+        const resposta = await apiFetch(`/Modulos/Empresa/${empresaSelecionada.id}`);
+        if (resposta.ok) {
+          setModulos(await resposta.json());
         }
-      };
-      buscarModulos();
-    } else {
-      setModulos([]); // Limpa se não houver empresa
-    }
-  }, [empresaSelecionada]);
+      } catch (error) {
+        console.error("Erro ao carregar os módulos da empresa:", error);
+      }
+    };
+
+    buscarModulosDaEmpresa();
+  // 2. MUDANÇA AQUI: Adicionamos o 'atualizarMenu' na lista de dependências!
+  }, [empresaSelecionada, atualizarMenu]);
 
   return (
-    <div className="flex h-screen bg-slate-950 font-sans text-slate-300">
+    <div className="flex h-screen bg-[#0f172a] print:block print:h-auto print:bg-white">
       
       {/* BARRA LATERAL ESQUERDA */}
-      <aside className="w-64 bg-slate-900 border-r border-slate-800 flex flex-col">
+      <aside className="w-64 bg-slate-900 border-r border-slate-800 flex flex-col print:hidden">
         <div className="h-20 flex items-center px-6 border-b border-slate-800 shrink-0">
           <h2 className="text-2xl font-extrabold text-white tracking-tight flex items-center gap-2">
             <svg className="w-8 h-8 text-indigo-500" fill="currentColor" viewBox="0 0 24 24">
@@ -118,7 +113,7 @@ export default function Layout() {
       <div className="flex-1 flex flex-col overflow-hidden">
         
         {/* BARRA SUPERIOR - Ajustada para justify-between */}
-        <header className="h-20 bg-slate-900 border-b border-slate-800 flex items-center justify-between px-8 shrink-0">
+        <header className="h-16 bg-slate-900 border-b border-slate-800 flex items-center justify-between px-6 print:hidden">
           
           {/* 4. DADOS DA EMPRESA NA NAVBAR */}
           <div className="flex-1">
@@ -146,10 +141,8 @@ export default function Layout() {
             </button>
           </div>
         </header>
-
-        <main className="flex-1 overflow-y-auto bg-slate-950 p-8">
-          {/* 5. PASSANDO A FUNÇÃO DE SELEÇÃO PARA AS ROTAS FILHAS */}
-          <Outlet context={{ empresaSelecionada, setEmpresaSelecionada }} />
+        <main className="flex-1 overflow-y-auto p-8 print:overflow-visible print:h-auto print:p-0 print:block">
+          <Outlet context={{ empresaSelecionada, setEmpresaSelecionada, recarregarModulos }} />
         </main>
 
       </div>

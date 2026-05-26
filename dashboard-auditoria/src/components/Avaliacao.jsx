@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useOutletContext } from 'react-router-dom'; // ✅ CORRIGIDO: Importado o useOutletContext
+import { apiFetch } from '../services/apiService';
 
 export default function Avaliacao() {
   const { id_empresa, id_modulo } = useParams();
   const navigate = useNavigate();
-
+  const { recarregarModulos } = useOutletContext(); // ✅ Agora funcionará perfeitamente
   const [perguntas, setPerguntas] = useState([]);
   const [indiceAtual, setIndiceAtual] = useState(0);
   const [carregando, setCarregando] = useState(true);
@@ -15,7 +16,8 @@ export default function Avaliacao() {
   useEffect(() => {
     const buscarPerguntas = async () => {
       try {
-        const resposta = await fetch(`http://localhost:5187/api/Perguntas/Modulo/${id_modulo}`);
+        // ✅ Perfeito: Busca totalmente dinâmica baseada no ID real do banco, sem travar no valor 1
+        const resposta = await apiFetch(`/Perguntas/Modulo/${id_modulo}`);
         if (resposta.ok) {
           setPerguntas(await resposta.json());
         } else {
@@ -23,7 +25,7 @@ export default function Avaliacao() {
         }
       } catch (error) {
         // ====================================================================
-        // FALLBACK LOCAL: Atualizado com a nova estrutura de 'nome' e 'descricao'
+        // FALLBACK LOCAL: Em caso de falha de conexão com a API
         // ====================================================================
         const dadosSimulados = [
           {
@@ -80,10 +82,9 @@ export default function Avaliacao() {
   };
 
   const finalizarAuditoria = async (respostasFinais) => {
-    // Transforma para o formato de array exigido pela sua API C#
     const arrayRespostas = Object.keys(respostasFinais).map((perguntaId) => ({
       PerguntaId: parseInt(perguntaId),
-      Resposta: respostasFinais[perguntaId] // Ajustado para 'Resposta' conforme o back-end
+      Resposta: respostasFinais[perguntaId]
     }));
 
     const usuarioString = localStorage.getItem('usuario');
@@ -91,13 +92,13 @@ export default function Avaliacao() {
 
     const payload = {
       UsuarioId: usuarioId,
-      EmpresaId: parseInt(id_empresa),
-      Respostas: arrayRespostas // Ajustado para 'Respostas' com o plural correto
+      CompanyId: parseInt(id_empresa), // Ajuste se no back estiver EmpresaId ou CompanyId
+      Respostas: arrayRespostas
     };
 
     try {
       setCarregando(true); 
-      const respostaApi = await fetch('http://localhost:5187/api/Auditorias', {
+      const respostaApi = await apiFetch('/Repostas', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
@@ -106,13 +107,18 @@ export default function Avaliacao() {
       if (respostaApi.ok) {
         alert("Auditoria finalizada e salva com sucesso!");
         localStorage.removeItem(cacheKey);
-        navigate(`/relatorio/${id_empresa}/modulo/${id_modulo}`);
+        
+        if (recarregarModulos) {
+          recarregarModulos();
+        }
+        
+        navigate('/dashboard');
       } else {
-        alert("Erro ao salvar as respostas na base de dados.");
+        alert("Erro ao salvar as respostas.");
       }
     } catch (error) {
       console.error(error);
-      alert("Falha de comunicação com o servidor C#. Progresso mantido localmente.");
+      alert("Erro ao conectar com a API.");
     } finally {
       setCarregando(false);
     }
@@ -135,7 +141,7 @@ export default function Avaliacao() {
       navigate('/dashboard');
     }
   };
-
+  
   if (carregando) return <div className="p-10 text-white text-center">Processando dados do questionário...</div>;
   if (perguntas.length === 0) return <div className="p-10 text-white text-center">Nenhum controle mapeado neste módulo.</div>;
 
