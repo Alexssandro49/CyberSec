@@ -2,12 +2,11 @@
 
 ## 1. Apresentação 
 O sistema CyberSec foi desenvolvido com o objetivo de fornecer uma base moderna e escalável para 
-aplicações voltadas à auditoria de segurança da informação. A aplicação busca auxiliar organizações nos processos de avaliação de conformidade, gerenciamento de requisitos e acompanhamento[...]
-Com o crescimento das ameaças digitais e da necessidade de proteção de dados, torna-se fundamental o desenvolvimento de sistemas que facilitem auditorias e análises de segurança.
+aplicações voltadas à auditoria de segurança da informação. A aplicação busca auxiliar organizações nos processos de avaliação de conformidade, gerenciamento de requisitos e acompanhamento. Com o crescimento das ameaças digitais e da necessidade de proteção de dados, torna-se fundamental o desenvolvimento de sistemas que facilitem auditorias e análises de segurança.
 
 ## 2. Problema 
 Muitas organizações encontram dificuldades no gerenciamento de auditorias de segurança da 
-informação devido à ausência de ferramentas centralizadas e eficientes. Além disso, sistemas antigos apresentam limitações de escalabilidade, usabilidade e integração com tecnologias modernas[...]
+informação devido à ausência de ferramentas centralizadas e eficientes. Além disso, sistemas antigos apresentam limitações de escalabilidade, usabilidade e integração com tecnologias modernas. 
 
 ## 3. Objetivos 
 
@@ -22,7 +21,7 @@ Desenvolver uma aplicação web moderna para gerenciamento e acompanhamento de a
 - Disponibilizar gráficos e relatórios para acompanhamento das auditorias
 
 ## 4. Justificativa 
-A segurança da informação tornou-se um fator essencial para organizações de diferentes setores. Dessa forma, ferramentas que auxiliem processos de auditoria e conformidade são indispensáveis pa[...]
+A segurança da informação tornou-se um fator essencial para organizações de diferentes setores. Dessa forma, ferramentas que auxiliem processos de auditoria e conformidade são indispensáveis. 
 
 ## 5. Funcionalidades do Sistema
 
@@ -32,13 +31,19 @@ Para o desenvolvimento do sistema foram utilizadas tecnologias modernas tanto no
 Tecnologias utilizadas 
 Front-end: 
 - React
-- - React Router DOM - Tailwind CSS - Recharts 
+- React Router DOM
+- Tailwind CSS
+- Recharts 
+
 Back-end: - .NET 10 
+
 Banco de Dados: - SQL 
+
 O desenvolvimento foi dividido entre interface gráfica, API e banco de dados, permitindo maior 
 modularização e organização do projeto. 
 
 ## 7. Especificação de Requisitos 
+
 7.1. Requisitos Funcionais 
 7.2. Requisitos Não Funcionais 
 7.3. Regras de Negócio 
