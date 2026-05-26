@@ -2,11 +2,12 @@
 
 ## 1. Apresentação 
 O sistema CyberSec foi desenvolvido com o objetivo de fornecer uma base moderna e escalável para 
-aplicações voltadas à auditoria de segurança da informação. A aplicação busca auxiliar organizações nos processos de avaliação de conformidade, gerenciamento de requisitos e acompanhamento. Com o crescimento das ameaças digitais e da necessidade de proteção de dados, torna-se fundamental o desenvolvimento de sistemas que facilitem auditorias e análises de segurança.
+aplicações voltadas à auditoria de segurança da informação. A aplicação busca auxiliar organizações nos processos de avaliação de conformidade, gerenciamento de requisitos e acompanhamento[...]
+Com o crescimento das ameaças digitais e da necessidade de proteção de dados, torna-se fundamental o desenvolvimento de sistemas que facilitem auditorias e análises de segurança.
 
 ## 2. Problema 
 Muitas organizações encontram dificuldades no gerenciamento de auditorias de segurança da 
-informação devido à ausência de ferramentas centralizadas e eficientes. Além disso, sistemas antigos apresentam limitações de escalabilidade, usabilidade e integração com tecnologias modernas. 
+informação devido à ausência de ferramentas centralizadas e eficientes. Além disso, sistemas antigos apresentam limitações de escalabilidade, usabilidade e integração com tecnologias modernas[...]
 
 ## 3. Objetivos 
 
@@ -21,7 +22,7 @@ Desenvolver uma aplicação web moderna para gerenciamento e acompanhamento de a
 - Disponibilizar gráficos e relatórios para acompanhamento das auditorias
 
 ## 4. Justificativa 
-A segurança da informação tornou-se um fator essencial para organizações de diferentes setores. Dessa forma, ferramentas que auxiliem processos de auditoria e conformidade são indispensáveis. 
+A segurança da informação tornou-se um fator essencial para organizações de diferentes setores. Dessa forma, ferramentas que auxiliem processos de auditoria e conformidade são indispensáveis pa[...]
 
 ## 5. Funcionalidades do Sistema
 
@@ -56,7 +57,7 @@ modularização e organização do projeto.
 
 **Ator:** Usuário
 
-**Descrição:** Essa funcionalidade permite que o usuário realize uma auditoria de conformidade baseada nas normas ISO/IEC 27001 e ISO/IEC 27701, utilizando os controles da ISO/IEC 27002 para diagnóstico e avaliação da conformidade da empresa.
+**Descrição:** Essa funcionalidade permite que o usuário realize uma auditoria de conformidade baseada nas normas ISO/IEC 27001 e ISO/IEC 27701, utilizando os controles da ISO/IEC 27002 para diagn[...]
 
 **Pré-condição:** O usuário deve estar autenticado no sistema.
 
@@ -135,3 +136,87 @@ graph TD
     N --> O[Fim]
     D --> O
 ```
+
+---
+
+## 9. Modelo de Banco de Dados
+
+O banco de dados do sistema CyberSec foi modelado relacionalmente, garantindo a integridade referencial e a normalização dos dados. Abaixo está representado o diagrama entidade-relacionamento (ER):
+
+### Diagrama ER - Banco de Dados CyberSec
+
+```mermaid
+erDiagram
+    USUARIO ||--o{ AUDITORIAS : realiza
+    AUDITORIAS ||--o{ RESPOSTAS : contém
+    AUDITORIAS ||--|| EMPRESA : auditada
+    PERGUNTAS ||--o{ RESPOSTAS : respondida
+    CONTROLES ||--o{ PERGUNTAS : possui
+    MODULOS ||--o{ CONTROLES : agrupa
+
+    USUARIO {
+        int id PK
+        string nome
+        string email
+        string senha
+    }
+
+    AUDITORIAS {
+        int id PK
+        date data
+        int usuarioid FK
+        int empresaid FK
+    }
+
+    EMPRESA {
+        int id PK
+        string nome
+        string cnpj
+    }
+
+    RESPOSTAS {
+        int id PK
+        int perguntaid FK
+        int auditoriaid FK
+        string resposta
+    }
+
+    PERGUNTAS {
+        int id PK
+        int controleid FK
+        string descricao
+        string nome
+    }
+
+    CONTROLES {
+        int id PK
+        int moduloid FK
+        string nome
+    }
+
+    MODULOS {
+        int id PK
+        string nome
+    }
+```
+
+### Descrição das Tabelas
+
+| Tabela | Descrição |
+|--------|-----------|
+| **USUARIO** | Armazena informações dos usuários do sistema (autenticação e perfil) |
+| **EMPRESA** | Contém dados das empresas que serão auditadas (nome e CNPJ) |
+| **AUDITORIAS** | Registra as auditorias realizadas, relacionando usuário e empresa |
+| **MODULOS** | Agrupa os controles em módulos temáticos (ex: Políticas, Organização, etc) |
+| **CONTROLES** | Define os controles de segurança baseados na ISO/IEC 27002 |
+| **PERGUNTAS** | Contém as perguntas específicas de cada controle |
+| **RESPOSTAS** | Armazena as respostas fornecidas durante cada auditoria |
+
+### Relacionamentos Principais
+
+- **USUARIO → AUDITORIAS**: Um usuário pode realizar múltiplas auditorias
+- **AUDITORIAS → EMPRESA**: Cada auditoria está associada a uma empresa
+- **AUDITORIAS → RESPOSTAS**: Cada auditoria contém múltiplas respostas
+- **PERGUNTAS → RESPOSTAS**: Cada pergunta pode ter múltiplas respostas (de diferentes auditorias)
+- **CONTROLES → PERGUNTAS**: Cada controle possui múltiplas perguntas associadas
+- **MODULOS → CONTROLES**: Cada módulo agrupa múltiplos controles
