@@ -92,19 +92,18 @@ export default function Avaliacao() {
 
     const payload = {
       UsuarioId: usuarioId,
-      CompanyId: parseInt(id_empresa), // Ajuste se no back estiver EmpresaId ou CompanyId
+      EmpresaId: parseInt(id_empresa), // Ajuste se no back estiver EmpresaId ou CompanyId
       Respostas: arrayRespostas
     };
 
     try {
       setCarregando(true); 
-      const respostaApi = await apiFetch('/Repostas', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
+      const resposta = await apiFetch('/Auditorias', {
+      method: 'POST',
+      body: JSON.stringify(payload)
+    });
 
-      if (respostaApi.ok) {
+      if (resposta.ok) {
         alert("Auditoria finalizada e salva com sucesso!");
         localStorage.removeItem(cacheKey);
         
@@ -112,7 +111,7 @@ export default function Avaliacao() {
           recarregarModulos();
         }
         
-        navigate('/dashboard');
+        navigate('/Relatorio');
       } else {
         alert("Erro ao salvar as respostas.");
       }

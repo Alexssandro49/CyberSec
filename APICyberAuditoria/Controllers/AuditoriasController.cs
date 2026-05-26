@@ -39,11 +39,11 @@ public class AuditoriasController : ControllerBase
             // 3. Auditorias Específicas do ISO 27001 (Considerando ModuloId == 1)
             // Usamos Any() para verificar se existe alguma resposta ligada a este módulo
             var totalIso27001 = await _context.Auditorias
-                .CountAsync(a => a.Respostas.Any(r => r.Pergunta.Controle.ModuloId == 1));
+                .CountAsync(a => a.Respostas.Any(r => r.Pergunta.Controle.Modulo.Nome.Contains("27001")));
 
             // 4. Auditorias Específicas do ISO 27701 (Considerando ModuloId == 2)
             var totalIso27701 = await _context.Auditorias
-                .CountAsync(a => a.Respostas.Any(r => r.Pergunta.Controle.ModuloId == 2));
+                .CountAsync(a => a.Respostas.Any(r => r.Pergunta.Controle.Modulo.Nome.Contains("27701") ));
 
             // 5. Monta o objeto anônimo formatado para o React
             var estatisticas = new

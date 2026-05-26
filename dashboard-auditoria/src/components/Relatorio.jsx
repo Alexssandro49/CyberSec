@@ -78,6 +78,7 @@ export default function Relatorio() {
   useEffect(() => {
     const buscarModulo = async () => {
       try {
+        
         const resposta = await apiFetch(`/Modulos/${id_modulo}`);
         if (resposta.ok) setModuloAtual(await resposta.json());
         else throw new Error();
