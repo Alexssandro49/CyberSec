@@ -48,9 +48,9 @@ Na aba **Empresas**, o usuário poderá visualizar todas as empresas cadastradas
 
 Assim como no dashboard, também existe um botão para cadastrar uma nova empresa.
 
-Após salvar a empresa cadastrada, o sistema perguntará ao usuário se deseja iniciar imediatamente uma auditoria.
+Após salvar a empresa cadastrada, o sistema perguntará ao usuário se deseja iniciar imediatamente uma auditoria. Conforme a imagem: 
 
-<img width="629" height="419" alt="8" src="https://github.com/user-attachments/assets/44b214c4-7a0f-48b5-9bfe-0e144c2c6eda" />
+<img width="626" height="540" alt="5" src="https://github.com/user-attachments/assets/ac2f0bc7-9359-4f3e-b750-7f003ba36fba" />
 
 ---
 
@@ -113,12 +113,17 @@ A tela também disponibiliza:
 
 ### Passo 7 — Acessar os Relatórios
 
+<img width="1600" height="673" alt="3" src="https://github.com/user-attachments/assets/b172e0a6-6d9f-4b8b-91b1-cea73b1157c6" />
+
 
 Para acessar os relatórios, é necessário possuir uma empresa selecionada.
 
 Após selecionar uma empresa, o menu lateral disponibilizará os módulos auditados para acesso aos relatórios.
 
 Ao acessar um relatório, a página apresentará:
+
+<img width="1600" height="721" alt="11" src="https://github.com/user-attachments/assets/a049aeb9-2580-4429-9752-3ed4403c13a9" />
+
 
 - Nome do módulo;
 - Botão para gerar relatório em PDF;
@@ -129,6 +134,8 @@ As auditorias serão identificadas pela data de realização, sendo carregada in
 ---
 
 ### Passo 8 — Visualizar Informações do Relatório
+
+<img width="1498" height="757" alt="14" src="https://github.com/user-attachments/assets/fa5e145a-5285-4f89-91b1-309038d07756" />
 
 Na tela do relatório serão exibidas informações como:
 
@@ -141,11 +148,15 @@ Na tela do relatório serão exibidas informações como:
 
 Ao lado dessas informações será exibido um gráfico de evolução em curva, responsável por demonstrar a evolução da conformidade utilizando as quatro auditorias mais recentes.
 
+<img width="1535" height="634" alt="12" src="https://github.com/user-attachments/assets/4ef585a1-1118-48cd-a63f-30d7df48b6c0" />
+
 Caso exista apenas uma auditoria cadastrada, o sistema exibirá uma mensagem informando que não há dados suficientes para comparação.
 
 ---
 
 ### Passo 9 — Visualizar os Gráficos Estatísticos
+
+<img width="1528" height="635" alt="13" src="https://github.com/user-attachments/assets/c90b794b-d459-44bb-8b83-e2160d91f10c" />
 
 Logo abaixo serão exibidos gráficos estatísticos contendo os resultados da auditoria:
 
@@ -165,6 +176,9 @@ Exibe a porcentagem das respostas de acordo com suas respectivas categorias e co
 
 ### Passo 10 — Visualizar os Controles e Respostas
 
+<img width="1507" height="737" alt="15" src="https://github.com/user-attachments/assets/c5ccd45c-642b-47dd-ba2f-aecdc8d3ace7" />
+
+
 Na parte inferior da página serão exibidos os controles auditados juntamente com sua porcentagem de conformidade.
 
 Ao clicar sobre um controle, o sistema expandirá automaticamente as informações, exibindo:
@@ -174,6 +188,10 @@ Ao clicar sobre um controle, o sistema expandirá automaticamente as informaçõ
 - Informações detalhadas da auditoria.
 
 Também estarão disponíveis botões de agrupamento para filtrar as respostas por categoria:
+
+<img width="1524" height="678" alt="16" src="https://github.com/user-attachments/assets/10f054b1-1b55-44a9-bdd3-7623d7b2f982" />
+
+<img width="1497" height="391" alt="17" src="https://github.com/user-attachments/assets/f9e665ba-348c-4bd8-8f47-aa050c319773" />
 
 - Conformes;
 - Não Conformes;
