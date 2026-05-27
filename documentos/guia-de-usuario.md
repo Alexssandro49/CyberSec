@@ -155,10 +155,8 @@ Caso exista apenas uma auditoria cadastrada, o sistema exibirá uma mensagem inf
 ---
 
 ### Passo 9 — Visualizar os Gráficos Estatísticos
-
-<img width="1280" height="720" alt="13" src="https://github.com/user-attachments/assets/c90b794b-d459-44bb-8b83-e2160d91f10c" />
-
 Logo abaixo serão exibidos gráficos estatísticos contendo os resultados da auditoria:
+<img width="1280" height="720" alt="13" src="https://github.com/user-attachments/assets/c90b794b-d459-44bb-8b83-e2160d91f10c" />
 
 ### Gráfico de Barras
 
