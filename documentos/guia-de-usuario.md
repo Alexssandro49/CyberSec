@@ -22,7 +22,10 @@ No lado esquerdo da tela estará localizado o menu lateral de navegação do sis
 
 ### Passo 2 — Iniciar uma Nova Auditoria
 
-![2.jpeg](attachment:54711bb2-86f9-485c-9977-a38e17860128:2.jpeg)
+<img width="669" height="564" alt="4" src="https://github.com/user-attachments/assets/d2d07818-9eb3-45d2-9908-b3c66c5db7fc" />
+
+<img width="522" height="425" alt="6" src="https://github.com/user-attachments/assets/4c6e6df7-a2cb-4196-a5f0-c1e068854fe4" />
+
 
 Ao clicar no botão **“Nova Auditoria”**, o sistema abrirá uma tela para:
 
@@ -40,11 +43,14 @@ Os módulos disponíveis são:
 
 Na aba **Empresas**, o usuário poderá visualizar todas as empresas cadastradas e auditadas no sistema.
 
-![3.jpeg](attachment:e58df157-8ebf-4cce-b53e-0a020c4e0c29:3.jpeg)
+<img width="1072" height="764" alt="2" src="https://github.com/user-attachments/assets/c1012efa-d6d1-4b79-9dc1-5bba4f03077c" />
+
 
 Assim como no dashboard, também existe um botão para cadastrar uma nova empresa.
 
 Após salvar a empresa cadastrada, o sistema perguntará ao usuário se deseja iniciar imediatamente uma auditoria.
+
+<img width="629" height="419" alt="8" src="https://github.com/user-attachments/assets/44b214c4-7a0f-48b5-9bfe-0e144c2c6eda" />
 
 ---
 
@@ -54,9 +60,13 @@ Após confirmar o início da auditoria, o sistema apresentará a norma seleciona
 
 Caso o usuário retorne ao dashboard e clique novamente em **“Auditoria”**, o sistema exibirá uma caixa de diálogo simplificada solicitando apenas a seleção do módulo desejado.
 
+<img width="629" height="419" alt="8" src="https://github.com/user-attachments/assets/91d24c91-47df-4ba9-81a5-1cc7472da47d" />
+
 ---
 
 ### Passo 5 — Selecionar uma Empresa
+
+<img width="1600" height="673" alt="3" src="https://github.com/user-attachments/assets/aee82601-ee16-4ca5-8d69-c9058d53e7ef" />
 
 Ao clicar em uma empresa na página de empresas:
 
@@ -67,6 +77,9 @@ Ao clicar em uma empresa na página de empresas:
 ---
 
 ### Passo 6 — Responder às Perguntas da Auditoria
+
+<img width="1600" height="740" alt="9" src="https://github.com/user-attachments/assets/d14dafff-e236-46d2-b05e-e0e37bfdf9cb" />
+
 
 Na tela de perguntas da auditoria, o sistema apresentará:
 
@@ -83,6 +96,9 @@ Abaixo da barra serão exibidos:
 
 Em seguida, serão apresentadas as possíveis respostas:
 
+<img width="1434" height="697" alt="10" src="https://github.com/user-attachments/assets/10c727f6-fa85-4b0d-a5f0-800960229f8f" />
+
+
 - Conforme;
 - Não Implementado (Não Conforme);
 - Em Andamento;
@@ -96,6 +112,7 @@ A tela também disponibiliza:
 ---
 
 ### Passo 7 — Acessar os Relatórios
+
 
 Para acessar os relatórios, é necessário possuir uma empresa selecionada.
 
