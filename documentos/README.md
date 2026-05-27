@@ -38,7 +38,7 @@ Além disso, a página exibe uma tabela contendo as cinco auditorias mais recent
 
 No canto superior direito é apresentado o perfil do auditor autenticado no sistema, juntamente com um botão destinado à criação de uma nova auditoria. Já no canto esquerdo encontra-se o menu lateral de navegação, responsável pelo acesso às demais funcionalidades da aplicação.
 
-### Cadastro e Inicialização de Auditorias
+### 5.3. Cadastro e Inicialização de Auditorias
 
 Ao selecionar a opção de nova auditoria, o sistema direciona o usuário para uma tela onde é possível:
 
@@ -49,13 +49,13 @@ Após o salvamento da empresa, o sistema questiona se o usuário deseja iniciar 
 
 Caso o usuário acesse novamente a funcionalidade de auditoria a partir do dashboard, o sistema apresenta uma caixa de diálogo simplificada, solicitando apenas a seleção do módulo desejado.
 
-### 5.Gerenciamento de Empresas
+### 5.4. Gerenciamento de Empresas
 
 A aba de empresas apresenta todas as organizações cadastradas e auditadas no sistema. Assim como no dashboard, também existe um botão específico para cadastro de novas empresas.
 
 Ao selecionar uma empresa, o menu lateral é expandido automaticamente, disponibilizando opções para acesso aos registros de auditorias vinculados à empresa selecionada. Além disso, a barra superior esquerda passa a exibir o nome da empresa atualmente ativa no sistema.
 
-### Execução das Auditorias
+### 5.5. Execução das Auditorias
 
 Durante a execução das auditorias, a interface apresenta uma barra de progresso contendo:
 
@@ -78,7 +78,7 @@ As respostas disponíveis para cada pergunta são:
 
 A interface também disponibiliza botões para retorno à pergunta anterior e cancelamento da auditoria.
 
-### Relatórios de Auditoria
+### 5.6. Relatórios de Auditoria
 
 Para acessar os relatórios é necessário possuir uma empresa selecionada. Após a seleção, o menu lateral disponibiliza os módulos auditados para consulta.
 
@@ -98,7 +98,7 @@ A interface também apresenta:
 
 Ao lado dessas informações é exibido um gráfico de evolução em curva, responsável por demonstrar a evolução dos resultados considerando até quatro auditorias mais recentes. Caso exista apenas uma auditoria cadastrada, o sistema exibe uma mensagem informativa indicando ausência de dados suficientes para comparação.
 
-### Visualização Estatística
+### 5.7. Visualização Estatística
 
 Os relatórios disponibilizam gráficos estatísticos para análise dos resultados obtidos:
 
@@ -106,7 +106,7 @@ Os relatórios disponibilizam gráficos estatísticos para análise dos resultad
 - Gráfico de evolução: demonstra o nível de evolução entre auditorias;
 - Gráfico de pizza: apresenta a distribuição percentual das respostas conforme suas respectivas categorias e cores.
 
-### Detalhamento dos Controles
+### 5.8. Detalhamento dos Controles
 
 Na seção de respostas, o sistema inicialmente apresenta a porcentagem de conformidade de cada controle auditado.
 
