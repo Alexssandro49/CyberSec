@@ -343,7 +343,7 @@ graph TD
 
 ## 10. Modelo de Banco de Dados
 
-O banco de dados do sistema CyberSec foi modelado relacionalmente, garantindo a integridade referencial e a normalizaç��o dos dados. Abaixo está representado o diagrama entidade-relacionamento (ER):
+O banco de dados do sistema CyberSec foi modelado relacionalmente, garantindo a integridade referencial e a normalização dos dados. Abaixo está representado o diagrama entidade-relacionamento (ER):
 
 ### Diagrama ER - Banco de Dados CyberSec
 
