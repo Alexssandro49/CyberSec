@@ -3,8 +3,7 @@
 ## Passo a Passo de Utilização do Sistema CyberSec
 
 ### Passo 1 — Acessar o Dashboard Inicial
-
-![1.jpeg](attachment:1341d820-6eeb-47b9-9565-ad02d43356e9:1.jpeg)
+<img width="1400" height="600" alt="1" src="https://github.com/user-attachments/assets/18549bc9-508b-46a0-90ff-3602e512931a" />
 
 Ao acessar o sistema, o usuário será direcionado para o dashboard inicial. Nesta tela serão exibidas informações gerais sobre as auditorias realizadas no sistema, incluindo:
 
