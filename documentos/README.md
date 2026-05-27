@@ -1,13 +1,10 @@
 # Documentação Final do Sistema CyberSec
 
 ## 1. Apresentação 
-O sistema CyberSec foi desenvolvido com o objetivo de fornecer uma base moderna e escalável para 
-aplicações voltadas à auditoria de segurança da informação. A aplicação busca auxiliar organizações nos processos de avaliação de conformidade, gerenciamento de requisitos e acompanhamento[...]
-Com o crescimento das ameaças digitais e da necessidade de proteção de dados, torna-se fundamental o desenvolvimento de sistemas que facilitem auditorias e análises de segurança.
+O sistema CyberSec foi desenvolvido com o objetivo de fornecer uma base moderna e escalável para aplicações voltadas à auditoria de segurança da informação. A aplicação busca auxiliar organizações nos processos de avaliação de conformidade, gerenciamento de requisitos e acompanhamento de controles relacionados às normas ISO/IEC 27001 e ISO/IEC 27701. Com o crescimento das ameaças digitais e da necessidade de proteção de dados, torna-se fundamental o desenvolvimento de sistemas que facilitem auditorias e análises de segurança.
 
 ## 2. Problema 
-Muitas organizações encontram dificuldades no gerenciamento de auditorias de segurança da 
-informação devido à ausência de ferramentas centralizadas e eficientes. Além disso, sistemas antigos apresentam limitações de escalabilidade, usabilidade e integração com tecnologias modernas[...]
+Muitas organizações encontram dificuldades no gerenciamento de auditorias de segurança da informação devido à ausência de ferramentas centralizadas e eficientes. Além disso, sistemas antigos apresentam limitações de escalabilidade, usabilidade e integração com tecnologias modernas. Outro problema identificado é a complexidade no acompanhamento de requisitos das normas ISO/IEC 27001 e ISO/IEC 27701, dificultando o controle de conformidade e o registro das avaliações realizadas. 
 
 ## 3. Objetivos 
 
@@ -22,9 +19,11 @@ Desenvolver uma aplicação web moderna para gerenciamento e acompanhamento de a
 - Disponibilizar gráficos e relatórios para acompanhamento das auditorias
 
 ## 4. Justificativa 
-A segurança da informação tornou-se um fator essencial para organizações de diferentes setores. Dessa forma, ferramentas que auxiliem processos de auditoria e conformidade são indispensáveis pa[...]
+A segurança da informação tornou-se um fator essencial para organizações de diferentes setores. Dessa forma, ferramentas que auxiliem processos de auditoria e conformidade são indispensáveis.
 
 ## 5. Funcionalidades do Sistema
+### Descrição
+
 
 ## 6. Material e Método 
 Para o desenvolvimento do sistema foram utilizadas tecnologias modernas tanto no front-end quanto no back-end. 
@@ -36,20 +35,21 @@ Front-end:
 - Tailwind CSS
 - Recharts 
 
-Back-end: - .NET 10 
+Back-end: 
+- .NET 10 
 
-Banco de Dados: - SQL 
+Banco de Dados: 
+- SQL 
 
-O desenvolvimento foi dividido entre interface gráfica, API e banco de dados, permitindo maior 
-modularização e organização do projeto. 
+O desenvolvimento foi dividido entre interface gráfica, API e banco de dados, permitindo maior modularização e organização do projeto. 
 
 ## 7. Especificação de Requisitos 
 
 7.1. Requisitos Funcionais 
+
 7.2. Requisitos Não Funcionais 
+
 7.3. Regras de Negócio 
- 
- 
  
 ## 8. Casos de Uso 
  
@@ -57,7 +57,7 @@ modularização e organização do projeto.
 
 **Ator:** Usuário
 
-**Descrição:** Essa funcionalidade permite que o usuário realize uma auditoria de conformidade baseada nas normas ISO/IEC 27001 e ISO/IEC 27701, utilizando os controles da ISO/IEC 27002 para diagn[...]
+**Descrição:** Essa funcionalidade permite que o usuário realize uma auditoria de conformidade baseada nas normas ISO/IEC 27001 e ISO/IEC 27701, utilizando os controles da ISO/IEC 27002 para diagnóstico e avaliação da conformidade da empresa.
 
 **Pré-condição:** O usuário deve estar autenticado no sistema.
 
