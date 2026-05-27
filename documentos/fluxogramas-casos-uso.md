@@ -84,71 +84,21 @@ flowchart TD
 
 ---
 
-## Caso de Uso 3: Pesquisar Solução de Problemas
-
-```mermaid
-flowchart TD
-    A[Usuário Acessa Sistema] --> B[Sistema Exibe Página de Pesquisa]
-    B --> C[Usuário Acessa Barra de Pesquisa]
-    
-    C --> D[Usuário Insere Problema/Palavra-chave]
-    D --> E{Sistema Processa Busca}
-    
-    E -->|Resultados Encontrados| F[Sistema Apresenta Tela com Soluções]
-    E -->|Sem Resultados| G[Sistema Exibe Mensagem: Nenhum Resultado]
-    
-    G --> H{Tentar Novamente?}
-    H -->|Sim| C
-    H -->|Não| I[Fim: Sem Solução Encontrada]
-    
-    F --> J[Sistema Lista Problemas Similares]
-    J --> K[Cada Item Exibe: Descrição + Tipo de Solução]
-    
-    K --> L{Usuário Seleciona Item}
-    L -->|Problema| M[Sistema Exibe Detalhes do Problema]
-    L -->|Solução| N[Sistema Exibe Descrição da Solução]
-    
-    M --> O[Sistema Apresenta Recursos Disponíveis]
-    N --> O
-    
-    O --> P{Qual Recurso?}
-    P -->|Vídeo Aula| Q[Sistema Exibe Vídeo Aula]
-    P -->|Relatório| R[Sistema Exibe Relatório Detalhado]
-    P -->|Ambos| S[Sistema Exibe Vídeo Aula e Relatório]
-    
-    Q --> T[Usuário Visualiza Conteúdo]
-    R --> T
-    S --> T
-    
-    T --> U{Conteúdo Útil?}
-    U -->|Sim| V[Problema Resolvido]
-    U -->|Não| W{Pesquisar Novamente?}
-    
-    W -->|Sim| C
-    W -->|Não| I
-    
-    V --> X[Fim: Solução Apresentada com Sucesso]
-```
-
----
-
 ## Resumo dos Fluxos
 
 | Caso de Uso | Início | Fim |
 |------------|--------|-----|
 | Auditoria de Conformidade | Usuário Autenticado | Auditoria Registrada com Gráficos |
 | Dashboard e Relatórios | Auditorias Cadastradas | Relatório Processado |
-| Pesquisa de Soluções | Usuário no Sistema | Solução Apresentada ou Nova Busca |
 
 ---
 
 ## Atores Identificados
-- **Usuário**: Realiza auditorias, visualiza dashboards e pesquisa soluções
-- **Sistema**: Processa dados, gera gráficos, armazena informações e recupera soluções
+- **Usuário**: Realiza auditorias e visualiza dashboards
+- **Sistema**: Processa dados, gera gráficos e armazena informações
 
 ## Elementos Críticos dos Fluxos
 1. **Autenticação**: Obrigatória para auditoria
 2. **Validação**: Cada seleção é validada antes do prosseguimento
 3. **Armazenamento**: Dados persistidos após conclusão
 4. **Geração de Relatórios**: Dinâmica baseada na seleção do usuário
-5. **Tratamento de Erros**: Loops para tentar novamente em caso de falha
