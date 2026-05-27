@@ -418,3 +418,6 @@ erDiagram
 - **PERGUNTAS → RESPOSTAS**: Cada pergunta pode ter múltiplas respostas (de diferentes auditorias)
 - **CONTROLES → PERGUNTAS**: Cada controle possui múltiplas perguntas associadas
 - **MODULOS → CONTROLES**: Cada módulo agrupa múltiplos controles
+
+
+Autores: Sthefanie Nicole de Souza Silva - Acadêmica em CST Redes de Computadores
