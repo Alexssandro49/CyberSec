@@ -336,8 +336,12 @@ graph TD
 ```
 
 ---
+## 9. Diagrama Caso de uso
 
-## 9. Modelo de Banco de Dados
+<img width="1536" height="1024" alt="diagrama-casos-de-uso" src="https://github.com/user-attachments/assets/a5278219-887f-421c-b957-0c00359825e8" />
+
+
+## 10. Modelo de Banco de Dados
 
 O banco de dados do sistema CyberSec foi modelado relacionalmente, garantindo a integridade referencial e a normalizaç��o dos dados. Abaixo está representado o diagrama entidade-relacionamento (ER):
 
