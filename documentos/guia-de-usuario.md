@@ -220,4 +220,4 @@ Além disso, o PDF apresentará:
 - Listagem de controles com suas notas;
 - Tabela contendo todas as perguntas e respostas detalhadas da auditoria.
 
-Autores: Sthefanie Nicole de Souza Silva - Acadêmica CST em Redes de Computadores 
+Autores: Sthefanie Nicole de Souza Silva - Acadêmica CST em Redes de Computadores
