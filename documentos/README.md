@@ -424,4 +424,4 @@ erDiagram
 - **MODULOS → CONTROLES**: Cada módulo agrupa múltiplos controles
 
 
-Autores: Sthefanie Nicole de Souza Silva - Acadêmica em CST Redes de Computadores
+Autores: Sthefanie Nicole de Souza Silva - Acadêmica CST em Redes de Computadores
